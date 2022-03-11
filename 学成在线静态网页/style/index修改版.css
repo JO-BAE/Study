@@ -1,0 +1,454 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+body {
+    background-color: #f3f5f7;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* 1.header区域开始 */
+.header {
+    height: 100px;
+    background: url(../images/logo.png) no-repeat left center;
+}
+
+.header .nav {
+    float: left;
+    margin: 27px 0 27px 265px;
+}
+
+.header .nav ul li {
+    float: left;
+}
+
+.header .nav ul li a {
+    /* 为了让它支楞起来设成block，否则padding纵向不撑场子 */
+    display: block;
+    margin-left: 27px;
+    /* hover会出现个下border,所以下padding减小2px*/
+    padding: 11px 10px 9px;
+    color: #050505;
+    font-size: 18px;
+}
+
+.header .nav ul li:first-child a {
+    margin-left: 0;
+}
+
+.header .nav ul li a:hover {
+    border-bottom: 2px solid #00a4ff;
+}
+
+.header .search {
+    float: left;
+    width: 410px;
+    height: 40px;
+    margin: 30px 0 30px 87px;
+}
+
+.search input {
+    float: left;
+    width: 321px;
+    height: 38px;
+    padding: 0 19px;
+    border: 1px solid #00a4ff;
+    border-right: none;
+    color: #999;
+    line-height: 38px;
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 40px;
+    border: none;
+    background: url(../images/btn.png) no-repeat;
+}
+
+.header .user {
+    float: right;
+    margin: 35px 30px;
+}
+
+.user a {
+    /* 因为要设置宽高,并和另一个元素放一行 */
+    float: left;
+    width: 30px;
+    height: 30px;
+    background: url(../images/user.png) no-repeat;
+}
+
+.user span {
+    float: left;
+    /* 防止名字太长撑变形,先简单隐藏 */
+    width: 78px;
+    overflow: hidden;
+    height: 30px;
+    padding: 0 6px;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+/* header区域结束 */
+
+
+/* 2.banner区域开始 */
+.banner {
+    height: 420px;
+    background: #1c036c;
+}
+
+.banner .w {
+    height: 420px;
+    background: url(../images/banner.png) no-repeat top center;
+}
+
+.banner .w .nav {
+    float: left;
+    /* 防止菜单太长超出范围,简单隐藏 */
+    overflow: hidden;
+    width: 190px;
+    height: 420px;
+    background: rgba(0, 0, 0, .3);
+}
+
+.banner .w .nav ul {
+    margin: 12px 0;
+}
+
+.banner .w .nav ul li {
+    padding: 15px 21px;
+}
+
+.banner .w .nav ul li a {
+    display: block;
+    background: url(../images/arr.png) no-repeat right center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.banner .w .nav ul .selected a {
+    color: #00a4ff;
+    background: url(../images/blue-arr.png) no-repeat right center;
+}
+
+.banner .w .course {
+    float: right;
+    width: 230px;
+    margin-top: 50px;
+    background: #fff;
+}
+
+.course h2 {
+    height: 48px;
+    background: #9bceea;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+}
+
+.course ul {
+    overflow: hidden;
+    height: 186px;
+}
+
+.course ul li {
+    height: 48px;
+    margin: 0 19px;
+    padding-top: 12px;
+    border-bottom: 2px solid #ede9e9;
+}
+
+.course ul li a {
+    color: #4e4e4e;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.course ul li a span {
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.course ul li p {
+    color: #666;
+    font-size: 12px;
+}
+
+.course .more {
+    display: block;
+    height: 38px;
+    margin: 5px 14px 12px;
+    border: 1px solid #00a4ff;
+    color: #00a4ff;
+    line-height: 38px;
+    text-align: center;
+}
+
+/* banner区域结束 */
+
+/* 3.goods区域开始 */
+.goods {
+    height: 60px;
+    margin-top: 10px;
+    background: #fff;
+    line-height: 60px;
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, .1);
+}
+
+.goods h3 {
+    float: left;
+    margin-left: 34px;
+    color: #00a4ff;
+}
+
+.goods ul {
+    float: left;
+    margin: 0 34px;
+}
+
+.goods ul li {
+    float: left;
+}
+
+.goods ul li a {
+    padding: 0 34px;
+    border-left: 1px solid #ccc;
+    color: #333;
+}
+
+.goods .mod {
+    float: right;
+    margin-right: 26px;
+    color: #00a4ff;
+}
+
+/* goods区域结束 */
+
+/* 4.box区域开始 */
+.box .box-hd {
+    height: 34px;
+    line-height: 34px;
+    margin-top: 31px;
+}
+
+.box .box-hd h3 {
+    float: left;
+    color: #666;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.box .box-hd a {
+    float: right;
+    padding: 0 32px;
+    color: #999;
+    font-size: 12px;
+}
+
+.box .box-bd {
+    margin-top: 15px;
+}
+
+.box1 .box-bd ul {
+    overflow: hidden;
+    height: 555px;
+}
+
+.box .box-bd ul li {
+    position: relative;
+    float: left;
+    height: 270px;
+    width: 228px;
+    margin-right: 15px;
+    background-color: #fff;
+}
+
+.box1 .box-bd ul li:nth-child(5n) {
+    margin-right: 0;
+}
+
+.box1 .box-bd ul li:nth-child(n+6) {
+    margin-top: 15px;
+}
+.box .box-bd ul li .hot {
+    position: absolute;
+    top: 4px;
+    right: -4px;
+}
+
+/* 没给封面取类名，简单用:not区分一下图标和封面 */
+.box .box-bd ul li img:not(.icon) {
+    width: 100%;
+}
+
+.box .box-bd ul li h4 {
+    margin: 25px 20px 0 25px;
+    color: #000;
+    font-size: 14px;
+}
+
+.box .box-bd .info {
+    padding: 19px 20px 0 25px;
+    color: #999;
+    font-size: 12px;
+}
+
+.box .box-bd .info span {
+    color: #ff7c2d;
+}
+
+/* box区域结束 */
+
+/* 5.box2区域开始 */
+.box .box-hd ul {
+    width: 338px;
+    margin: 0 auto;
+}
+
+.box .box-hd ul li {
+    float: left;
+    margin-right: 70px;
+    font-size: 16px;
+}
+
+.box .box-hd ul li:last-child {
+    margin-right: 0;
+}
+
+.box .box-hd ul li a {
+    padding: 0;
+    color: #999;
+    font-size: 14px;
+}
+
+.box .box-hd ul .selected a {
+    color: #00a4ff;
+}
+
+.box2 .box-bd .left {
+    float: left;
+    width: 228px;
+    height: 392px;
+    background: url(../images/pic2.png) no-repeat;
+}
+
+.box2 .box-bd .right {
+    float: left;
+    width: 957px;
+    margin-left: 15px;
+    background: url(../images/pic3.png) no-repeat;
+}
+
+.box2 .box-bd .right ul {
+    overflow: hidden;
+    width: 957px;
+    height: 270px;
+    margin-top: 122px;
+}
+
+.box2 .box-bd .right ul li:last-child {
+    margin-right: 0;
+}
+
+/* box2区域结束 */
+
+/* 6.box3区域开始 */
+.box3 .box-bd ul {
+    overflow: hidden;
+    height: 270px;
+}
+
+.box3 .box-bd ul li:nth-child(5n){
+    margin-right: 0;
+}
+
+/* box3区域结束 */
+
+/* 7.footer区域开始 */
+.footer {
+    height: 420px;
+    margin-top: 40px;
+    background-color: #fff;
+}
+
+.footer .w {
+    padding-top: 34px;
+}
+
+.copyright {
+    float: left;
+    padding: 0 20px;
+    background: url(../images/logo.png) no-repeat 20px top;
+    color: #555;
+    font-size: 12px;
+}
+
+.copyright p {
+    margin-top: 64px;
+}
+
+.copyright a {
+    display: block;
+    width: 118px;
+    margin-top: 15px;
+    padding: 10px 0;
+    border: 1px solid #00a4ff;
+    color: #00a4ff;
+    font-size: 16px;
+    text-align: center;
+}
+
+.links {
+    float: right;
+}
+
+.links dl {
+    float: left;
+    margin-left: 100px;
+}
+
+.links dl dt {
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.links dl dd {
+    height: 21px;
+    font-size: 12px;
+    line-height: 21px;
+}
+
+.links dl dd a {
+    color: #000;
+}
+
+/* footer区域结束 */

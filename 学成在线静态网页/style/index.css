@@ -1,0 +1,414 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.font-blue {
+    color: #00a4ff !important;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #f3f5f7;
+    font-size: 16px;
+}
+
+.header-box {
+    height: 520px;
+}
+
+.top {
+    background: url(../images/logo.png) no-repeat center left;
+    height: 100px;
+    line-height: 100px;
+}
+
+.top .top-nav {
+    float: left;
+    margin-left: 265px;
+}
+
+.top .top-nav a {
+    padding: 11px 10px;
+    margin-right: 27px;
+    color: #050505;
+}
+
+.top .top-nav .selected {
+    border-bottom: 2px solid #00a4ff;
+}
+
+.top .search-box {
+    float: left;
+    margin: 30px 0 30px 58px;
+}
+
+.search-box input {
+    float: left;
+    padding: 0 19px;
+    color: #999;
+    border: 1px solid #00a4ff;
+    width: 360px;
+    height: 38px;
+    line-height: 38px;
+}
+
+.search-box .search-btn {
+    float: left;
+    width: 50px;
+    height: 40px;
+    background: url(../images/search.png) no-repeat;
+}
+
+.top .user {
+    float: left;
+}
+
+.top .user .user-name {
+    margin-left: 31px;
+    background: url(../images/user.png) no-repeat center left;
+    padding: 0 6px 0 36px;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #000;
+}
+
+.header {
+    background-color: #1c036c;
+}
+
+.header .banner {
+    height: 420px;
+    background: url(../images/banner.png) no-repeat;
+}
+
+.banner .menu-list {
+    float: left;
+    width: 190px;
+    background: rgba(0, 0, 0, .3);
+    padding: 11px 0;
+    height: calc(100% - 22px);
+    overflow: hidden;
+}
+
+.banner .menu-item a {
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    color: #fff;
+    padding: 0 21px;
+    background: url(../images/arr.png) no-repeat 164px center;
+}
+
+.banner .menu-item .selected {
+    background: url(../images/blue-arr.png) no-repeat 164px center;
+}
+
+.banner .my-course {
+    float: right;
+    background: #fff;
+    width: 228px;
+    margin-top: 50px;
+}
+
+.banner .my-course h4 {
+    text-align: center;
+    background: #9bceea;
+    color: #fff;
+    height: 48px;
+    line-height: 48px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.my-course .course-list {
+    height: 186px;
+    overflow: hidden;
+}
+
+
+.my-course .course-item {
+    height: 48px;
+    margin: 0 19px;
+    padding-top: 12px;
+    border-bottom: 2px solid #ede9e9;
+}
+
+.course-item .continue {
+    font-size: 16px;
+    color: #4e4e4e;
+}
+
+.course-item .continue span {
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.course-item .learning {
+    font-size: 12px;
+    color: #666;
+}
+
+
+.my-course .all-btn {
+    display: block;
+    text-align: center;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #00a4ff;
+    margin: 5px 14px 12px;
+}
+
+.nav {
+    background-color: #fff;
+    height: 60px;
+    line-height: 60px;
+    margin-top: 10px;
+}
+
+
+.nav .nav-list {
+    float: left;
+    width: calc(100% - 125px);
+    height: 100%;
+    overflow: hidden;
+}
+
+.nav .nav-list li {
+    float: left;
+}
+
+.nav .nav-item a {
+    padding: 0 34px;
+    border-left: 1px solid #eee;
+    color: #333;
+}
+
+.nav .nav-item:first-child a {
+    border: none;
+}
+
+.nav .nav-item .selected {
+    font-weight: 700;
+}
+
+.nav .modify-btn {
+    float: right;
+    padding: 0 26px;
+    font-size: 14px;
+}
+
+.main .sub-header {
+    height: 34px;
+    line-height: 34px;
+    margin-top: 31px;
+}
+
+.sub-header h4 {
+    font-size: 20px;
+    font-weight: 400;
+    float: left;
+    color: #666;
+}
+
+.sub-header .more {
+    float: right;
+    font-size: 12px;
+    padding: 0 32px;
+    color: #999;
+}
+
+.main>.list {
+    height: 555px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.right>.list {
+    height: 270px;
+    overflow: hidden;
+    margin-top: 22px;
+    width: 957px;
+}
+
+.main>.one-line-list{
+    height: 270px;
+    overflow: hidden;
+}
+
+.list .item {
+    float: left;
+    height: 270px;
+    width: 228px;
+    margin: 15px 15px 0 0;
+    background: #fff url(../images/pic.png) no-repeat;
+}
+
+.main>.list li:nth-child(-n+5),
+.right>.list li:nth-child(-n+4) {
+    margin-top: 0;
+}
+
+.main>.list li:nth-child(5n),
+.right>.list li:nth-child(4n) {
+    margin-right: 0;
+}
+
+
+.list .item .join {
+    padding: 180px 20px 28px 25px;
+    color: #999;
+    font-size: 12px;
+}
+
+.list .item .icon {
+    float: right;
+    margin-right: -4px;
+    margin-top: 4px;
+}
+
+.list .item h4 {
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #000;
+}
+
+.list .item span {
+    color: #ff7c2d;
+}
+
+.list li span::after {
+    content: "·";
+    display: inline-block;
+    margin: 0 9px;
+    color: #999;
+}
+
+.sub-header .sub-nav {
+    width: 338px;
+    margin: 0 auto;
+
+}
+
+.sub-nav li {
+    float: left;
+    margin-right: 70px;
+    font-size: 16px;
+}
+
+.sub-nav li:last-child {
+    margin: 0;
+}
+
+.sub-nav li>a {
+    color: #999;
+    font-size: 14px;
+}
+
+.catogory-box {
+    margin-top: 15px;
+}
+
+.catogory-box .left {
+    float: left;
+    height: 392px;
+    width: 228px;
+    background: url(../images/pic2.png) no-repeat;
+}
+
+.catogory-box .right {
+    float: right;
+    margin-left: 15px;
+}
+
+.catogory-box .right .sub-top {
+    height: 100px;
+    background-color: rebeccapurple;
+    width: 957px;
+    background: url(../images/pic3.png) no-repeat;
+}
+
+.footer-box {
+    height: 420px;
+    margin-top: 40px;
+    background-color: #fff;
+}
+
+.footer {
+    height: 100%;
+}
+
+.footer .copyright {
+    float: left;
+    padding: 0 20px;
+    background: url(../images/logo.png) no-repeat 20px 33px;
+    font-size: 12px;
+    color: #555;
+}
+
+.copyright p {
+    margin-top: 98px;
+    font-size: 14px;
+}
+
+.copyright .down-btn {
+    display: block;
+    padding: 10px 0;
+    width: 118px;
+    text-align: center;
+    border: 1px solid #00a4ff;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.footer .links {
+    float: right;
+}
+
+.links dl {
+    float: left;
+    margin-top: 34px;
+    margin-left: 125px;
+}
+
+.footer .links a {
+    color: #000;
+}
+
+.links dt {
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.links dd {
+    font-size: 12px;
+    height: 21px;
+    line-height: 21px;
+}
