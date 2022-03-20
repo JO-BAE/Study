@@ -1,0 +1,9 @@
+#My configurations:
+password.txt
+__
+
+#排除所有.class文件：
+*.class
+
+#不排除App.class：
+!App.class
