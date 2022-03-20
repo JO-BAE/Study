@@ -3,6 +3,15 @@
     padding: 0;
 }
 
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+body {
+    background-color: #f3f5f7;
+}
+
 li {
     list-style: none;
 }
@@ -23,392 +32,423 @@ a {
     *zoom: 1;
 }
 
-.font-blue {
-    color: #00a4ff !important;
-}
-
-.w {
-    width: 1200px;
-    margin: 0 auto;
-}
-
-body {
-    background-color: #f3f5f7;
-    font-size: 16px;
-}
-
-.header-box {
-    height: 520px;
-}
-
-.top {
-    background: url(../images/logo.png) no-repeat center left;
+/* 1.header区域开始 */
+.header {
     height: 100px;
-    line-height: 100px;
+    background: url(../images/logo.png) no-repeat left center;
 }
 
-.top .top-nav {
+.header .nav {
     float: left;
-    margin-left: 265px;
+    margin: 27px 0 27px 265px;
 }
 
-.top .top-nav a {
-    padding: 11px 10px;
-    margin-right: 27px;
+.header .nav ul li {
+    float: left;
+}
+
+.header .nav ul li a {
+    /* 为了让它支楞起来设成block，否则padding纵向不撑场子 */
+    display: block;
+    margin-left: 27px;
+    /* hover会出现个下border,所以下padding减小2px*/
+    padding: 11px 10px 9px;
     color: #050505;
+    font-size: 18px;
 }
 
-.top .top-nav .selected {
+.header .nav ul li:first-child a {
+    margin-left: 0;
+}
+
+.header .nav ul li a:hover {
     border-bottom: 2px solid #00a4ff;
 }
 
-.top .search-box {
+.header .search {
     float: left;
-    margin: 30px 0 30px 58px;
+    width: 410px;
+    height: 40px;
+    margin: 30px 0 30px 87px;
 }
 
-.search-box input {
+.search input {
     float: left;
-    padding: 0 19px;
-    color: #999;
-    border: 1px solid #00a4ff;
-    width: 360px;
+    width: 321px;
     height: 38px;
+    padding: 0 19px;
+    border: 1px solid #00a4ff;
+    border-right: none;
+    color: #999;
     line-height: 38px;
 }
 
-.search-box .search-btn {
+.search button {
     float: left;
     width: 50px;
     height: 40px;
-    background: url(../images/search.png) no-repeat;
+    border: none;
+    background: url(../images/btn.png) no-repeat;
 }
 
-.top .user {
-    float: left;
-}
-
-.top .user .user-name {
-    margin-left: 31px;
-    background: url(../images/user.png) no-repeat center left;
-    padding: 0 6px 0 36px;
-    display: inline-block;
-    height: 30px;
-    line-height: 30px;
-    font-size: 14px;
-    color: #000;
-}
-
-.header {
-    background-color: #1c036c;
-}
-
-.header .banner {
-    height: 420px;
-    background: url(../images/banner.png) no-repeat;
-}
-
-.banner .menu-list {
-    float: left;
-    width: 190px;
-    background: rgba(0, 0, 0, .3);
-    padding: 11px 0;
-    height: calc(100% - 22px);
-    overflow: hidden;
-}
-
-.banner .menu-item a {
-    display: block;
-    height: 44px;
-    line-height: 44px;
-    color: #fff;
-    padding: 0 21px;
-    background: url(../images/arr.png) no-repeat 164px center;
-}
-
-.banner .menu-item .selected {
-    background: url(../images/blue-arr.png) no-repeat 164px center;
-}
-
-.banner .my-course {
+.header .user {
     float: right;
-    background: #fff;
-    width: 228px;
-    margin-top: 50px;
+    margin: 35px 30px;
 }
 
-.banner .my-course h4 {
-    text-align: center;
+.user a {
+    /* 因为要设置宽高,并和另一个元素放一行 */
+    float: left;
+    width: 30px;
+    height: 30px;
+    background: url(../images/user.png) no-repeat;
+}
+
+.user span {
+    float: left;
+    /* 防止名字太长撑变形,先简单隐藏 */
+    width: 78px;
+    overflow: hidden;
+    height: 30px;
+    padding: 0 6px;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+/* header区域结束 */
+
+
+/* 2.banner区域开始 */
+.banner {
+    height: 420px;
+    background: #1c036c;
+}
+
+.banner .w {
+    height: 420px;
+    background: url(../images/banner.png) no-repeat top center;
+}
+
+.banner .w .nav {
+    float: left;
+    /* 防止菜单太长超出范围,简单隐藏 */
+    overflow: hidden;
+    width: 190px;
+    height: 420px;
+    background: rgba(0, 0, 0, .3);
+}
+
+.banner .w .nav ul {
+    margin: 12px 0;
+}
+
+.banner .w .nav ul li {
+    padding: 15px 21px;
+}
+
+.banner .w .nav ul li a {
+    display: block;
+    background: url(../images/arr.png) no-repeat right center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.banner .w .nav ul .selected a {
+    color: #00a4ff;
+    background: url(../images/blue-arr.png) no-repeat right center;
+}
+
+.banner .w .course {
+    float: right;
+    width: 230px;
+    margin-top: 50px;
+    background: #fff;
+}
+
+.course h2 {
+    height: 48px;
     background: #9bceea;
     color: #fff;
-    height: 48px;
-    line-height: 48px;
     font-size: 18px;
     font-weight: 700;
+    line-height: 48px;
+    text-align: center;
 }
 
-.my-course .course-list {
-    height: 186px;
+.course ul {
     overflow: hidden;
+    height: 186px;
 }
 
-
-.my-course .course-item {
+.course ul li {
     height: 48px;
     margin: 0 19px;
     padding-top: 12px;
     border-bottom: 2px solid #ede9e9;
 }
 
-.course-item .continue {
-    font-size: 16px;
+.course ul li a {
     color: #4e4e4e;
-}
-
-.course-item .continue span {
-    font-size: 14px;
-    margin-left: 8px;
-}
-
-.course-item .learning {
-    font-size: 12px;
-    color: #666;
-}
-
-
-.my-course .all-btn {
-    display: block;
-    text-align: center;
-    height: 38px;
-    line-height: 38px;
-    border: 1px solid #00a4ff;
-    margin: 5px 14px 12px;
-}
-
-.nav {
-    background-color: #fff;
-    height: 60px;
-    line-height: 60px;
-    margin-top: 10px;
-}
-
-
-.nav .nav-list {
-    float: left;
-    width: calc(100% - 125px);
-    height: 100%;
-    overflow: hidden;
-}
-
-.nav .nav-list li {
-    float: left;
-}
-
-.nav .nav-item a {
-    padding: 0 34px;
-    border-left: 1px solid #eee;
-    color: #333;
-}
-
-.nav .nav-item:first-child a {
-    border: none;
-}
-
-.nav .nav-item .selected {
+    font-size: 16px;
     font-weight: 700;
 }
 
-.nav .modify-btn {
-    float: right;
-    padding: 0 26px;
+.course ul li a span {
+    margin-left: 8px;
     font-size: 14px;
 }
 
-.main .sub-header {
+.course ul li p {
+    color: #666;
+    font-size: 12px;
+}
+
+.course .more {
+    display: block;
+    height: 38px;
+    margin: 5px 14px 12px;
+    border: 1px solid #00a4ff;
+    color: #00a4ff;
+    line-height: 38px;
+    text-align: center;
+}
+
+/* banner区域结束 */
+
+/* 3.goods区域开始 */
+.goods {
+    height: 60px;
+    margin-top: 10px;
+    background: #fff;
+    line-height: 60px;
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, .1);
+}
+
+.goods h3 {
+    float: left;
+    margin-left: 34px;
+    color: #00a4ff;
+}
+
+.goods ul {
+    float: left;
+    margin: 0 34px;
+}
+
+.goods ul li {
+    float: left;
+}
+
+.goods ul li a {
+    padding: 0 34px;
+    border-left: 1px solid #ccc;
+    color: #333;
+}
+
+.goods .mod {
+    float: right;
+    margin-right: 26px;
+    color: #00a4ff;
+}
+
+/* goods区域结束 */
+
+/* 4.box区域开始 */
+.box .box-hd {
     height: 34px;
     line-height: 34px;
     margin-top: 31px;
 }
 
-.sub-header h4 {
-    font-size: 20px;
-    font-weight: 400;
+.box .box-hd h3 {
     float: left;
     color: #666;
+    font-size: 20px;
+    font-weight: 400;
 }
 
-.sub-header .more {
+.box .box-hd a {
     float: right;
-    font-size: 12px;
     padding: 0 32px;
     color: #999;
+    font-size: 12px;
 }
 
-.main>.list {
-    height: 555px;
-    overflow: hidden;
+.box .box-bd {
     margin-top: 15px;
 }
 
-.right>.list {
-    height: 270px;
+.box1 .box-bd ul {
     overflow: hidden;
-    margin-top: 22px;
-    width: 957px;
+    height: 555px;
 }
 
-.main>.one-line-list{
-    height: 270px;
-    overflow: hidden;
-}
-
-.list .item {
+.box .box-bd ul li {
+    position: relative;
     float: left;
     height: 270px;
     width: 228px;
-    margin: 15px 15px 0 0;
-    background: #fff url(../images/pic.png) no-repeat;
+    margin-right: 15px;
+    background-color: #fff;
 }
 
-.main>.list li:nth-child(-n+5),
-.right>.list li:nth-child(-n+4) {
-    margin-top: 0;
-}
-
-.main>.list li:nth-child(5n),
-.right>.list li:nth-child(4n) {
+.box1 .box-bd ul li:nth-child(5n) {
     margin-right: 0;
 }
 
+.box1 .box-bd ul li:nth-child(n+6) {
+    margin-top: 15px;
+}
+.box .box-bd ul li .hot {
+    position: absolute;
+    top: 4px;
+    right: -4px;
+}
 
-.list .item .join {
-    padding: 180px 20px 28px 25px;
+/* 没给封面取类名，简单用:not区分一下图标和封面 */
+.box .box-bd ul li img:not(.icon) {
+    width: 100%;
+}
+
+.box .box-bd ul li h4 {
+    margin: 25px 20px 0 25px;
+    color: #000;
+    font-size: 14px;
+}
+
+.box .box-bd .info {
+    padding: 19px 20px 0 25px;
     color: #999;
     font-size: 12px;
 }
 
-.list .item .icon {
-    float: right;
-    margin-right: -4px;
-    margin-top: 4px;
-}
-
-.list .item h4 {
-    font-weight: 400;
-    margin-bottom: 20px;
-    font-size: 14px;
-    color: #000;
-}
-
-.list .item span {
+.box .box-bd .info span {
     color: #ff7c2d;
 }
 
-.list li span::after {
-    content: "·";
-    display: inline-block;
-    margin: 0 9px;
-    color: #999;
-}
+/* box区域结束 */
 
-.sub-header .sub-nav {
+/* 5.box2区域开始 */
+.box .box-hd ul {
     width: 338px;
     margin: 0 auto;
-
 }
 
-.sub-nav li {
+.box .box-hd ul li {
     float: left;
     margin-right: 70px;
     font-size: 16px;
 }
 
-.sub-nav li:last-child {
-    margin: 0;
+.box .box-hd ul li:last-child {
+    margin-right: 0;
 }
 
-.sub-nav li>a {
+.box .box-hd ul li a {
+    padding: 0;
     color: #999;
     font-size: 14px;
 }
 
-.catogory-box {
-    margin-top: 15px;
+.box .box-hd ul .selected a {
+    color: #00a4ff;
 }
 
-.catogory-box .left {
+.box2 .box-bd .left {
     float: left;
-    height: 392px;
     width: 228px;
+    height: 392px;
     background: url(../images/pic2.png) no-repeat;
 }
 
-.catogory-box .right {
-    float: right;
-    margin-left: 15px;
-}
-
-.catogory-box .right .sub-top {
-    height: 100px;
-    background-color: rebeccapurple;
+.box2 .box-bd .right {
+    float: left;
     width: 957px;
+    margin-left: 15px;
     background: url(../images/pic3.png) no-repeat;
 }
 
-.footer-box {
+.box2 .box-bd .right ul {
+    overflow: hidden;
+    width: 957px;
+    height: 270px;
+    margin-top: 122px;
+}
+
+.box2 .box-bd .right ul li:last-child {
+    margin-right: 0;
+}
+
+/* box2区域结束 */
+
+/* 6.box3区域开始 */
+.box3 .box-bd ul {
+    overflow: hidden;
+    height: 270px;
+}
+
+.box3 .box-bd ul li:nth-child(5n){
+    margin-right: 0;
+}
+
+/* box3区域结束 */
+
+/* 7.footer区域开始 */
+.footer {
     height: 420px;
     margin-top: 40px;
     background-color: #fff;
 }
 
-.footer {
-    height: 100%;
+.footer .w {
+    padding-top: 34px;
 }
 
-.footer .copyright {
+.copyright {
     float: left;
     padding: 0 20px;
-    background: url(../images/logo.png) no-repeat 20px 33px;
-    font-size: 12px;
+    background: url(../images/logo.png) no-repeat 20px top;
     color: #555;
+    font-size: 12px;
 }
 
 .copyright p {
-    margin-top: 98px;
-    font-size: 14px;
+    margin-top: 64px;
 }
 
-.copyright .down-btn {
+.copyright a {
     display: block;
-    padding: 10px 0;
     width: 118px;
-    text-align: center;
-    border: 1px solid #00a4ff;
-    font-size: 16px;
     margin-top: 15px;
+    padding: 10px 0;
+    border: 1px solid #00a4ff;
+    color: #00a4ff;
+    font-size: 16px;
+    text-align: center;
 }
 
-.footer .links {
+.links {
     float: right;
 }
 
 .links dl {
     float: left;
-    margin-top: 34px;
-    margin-left: 125px;
+    margin-left: 100px;
 }
 
-.footer .links a {
-    color: #000;
-}
-
-.links dt {
+.links dl dt {
     margin-bottom: 16px;
     color: #333;
 }
 
-.links dd {
-    font-size: 12px;
+.links dl dd {
     height: 21px;
+    font-size: 12px;
     line-height: 21px;
 }
+
+.links dl dd a {
+    color: #000;
+}
+
+/* footer区域结束 */
