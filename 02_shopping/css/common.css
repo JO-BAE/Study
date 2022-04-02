@@ -40,6 +40,10 @@
     float: left;
 }
 
+.shortcut .fl li {
+    margin-right: 8px;
+}
+
 .shortcut .fr ul li:not(:last-child)::after {
     float: right;
     content: '';

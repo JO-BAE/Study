@@ -1,9 +1,10 @@
 #My configurations:
 password.txt
 __
+03_mobile
 
-#排除所有.class文件：
+#所有.class文件：
 *.class
 
-#不排除App.class：
+#不含App.class：
 !App.class
