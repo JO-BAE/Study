@@ -57,7 +57,6 @@ body {
     color: #666;
     font-family: 'iconfont';
     font-size: 20px;
-    font-weight: 700;
 }
 
 /* 顶部搜索区域结束 */
@@ -444,11 +443,14 @@ body {
 .footer {
     height: 120px;
     padding-bottom: 50px;
+    font-size: 12px;
+    line-height: 15px;
 }
 
 .button_wrap {
     display: flex;
     justify-content: space-around;
+    margin: 0 12px;
     margin-top: 24px;
 }
 
@@ -456,7 +458,7 @@ body {
     min-width: 100px;
     height: 30px;
     border: 1px solid #999;
-    color: #666;
+    color: #333;
     font-size: 13px;
     line-height: 30px;
     text-align: center;
