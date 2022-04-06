@@ -24,21 +24,18 @@ body {
     line-height: 1.5;
 }
 
-/* 顶部搜索区域开始 */
-.search_wrap {
+/* 顶部固定搜索区域开始 */
+.search {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
     z-index: 1;
+    width: 100%;
     max-width: 540px;
     padding: 12px 12px 6px;
     background: #fff;
     box-sizing: border-box;
 }
 
-.search {
+.input {
     display: flex;
     height: 32px;
     border: 1.8px solid #0086f6;
@@ -50,7 +47,7 @@ body {
     align-items: center;
 }
 
-.search::before {
+.input::before {
     content: '\e651';
     margin-left: 12px;
     margin-right: 6px;
@@ -59,11 +56,15 @@ body {
     font-size: 20px;
 }
 
-/* 顶部搜索区域结束 */
+/* 顶部固定搜索区域结束 */
+
+
+.page {
+    padding: 50px 0;
+}
 
 /* nav导航区域开始 */
 .nav_main_wrap {
-    margin-top: 50px;
     padding: 6px 12px 2px;
     background: #fff;
     font-family: PingFangSC-Medium;
@@ -165,7 +166,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20%;
+    flex: 20%;
     height: 58px;
 }
 
@@ -442,7 +443,6 @@ body {
 /* 底部信息区域开始 */
 .footer {
     height: 120px;
-    padding-bottom: 50px;
     font-size: 12px;
     line-height: 15px;
 }
@@ -513,9 +513,8 @@ body {
     display: flex;
     position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
+    z-index: 1;
+    width: 100%;
     max-width: 540px;
     height: 49px;
     background: #fff;
