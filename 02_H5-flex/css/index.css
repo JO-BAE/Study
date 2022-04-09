@@ -15,6 +15,8 @@ a {
 }
 
 body {
+    /* 携程没加最小宽度，但是页面缩太小时样式稀碎，觉得还是加上好一点 */
+    min-width: 320px;
     max-width: 540px;
     /* height: 1500px; */
     margin: 0 auto;
@@ -29,6 +31,7 @@ body {
     position: fixed;
     z-index: 1;
     width: 100%;
+    min-width: 320px;
     max-width: 540px;
     padding: 12px 12px 6px;
     background: #fff;
@@ -104,6 +107,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 58px;
+    white-space: nowrap;
 }
 
 .nav_main_1 ul li a::before {
@@ -111,7 +115,7 @@ body {
     width: 28px;
     height: 28px;
     margin-bottom: 4px;
-    background-image: url(https://pages.c-ctrip.com/basebiz/h5home/v1/nav/mainnav.png);
+    background-image: url(../images/mainnav.png);
     background-repeat: no-repeat;
     background-size: 28px;
 }
@@ -174,7 +178,7 @@ body {
     content: '';
     width: 28px;
     height: 28px;
-    background-image: url(https://pages.c-ctrip.com/basebiz/h5home/v1/nav/subnav.png);
+    background-image: url(../images/subnav.png);
     background-repeat: no-repeat;
     background-size: 28px;
 }
@@ -232,7 +236,18 @@ body {
 }
 
 .banner {
-    width: 50%;
+    flex: 1;
+    /* !!!!
+    这个overflow: hidden;非常重要！
+    因为flex：1只是一个尝试分配，其实还会根据实际内容的宽度做调整
+    而子元素又一层层直接或间接设置了宽度100%，也就是依赖父元素来设宽
+    这样就会陷入“父元素根据子元素调宽，子元素依赖父元素设宽”的“相互推让”局面
+    于是实际样式表现会根据子元素内容的增减一直变来变去
+    所以要确定一个主心骨，明确谁是基准
+    这里利用overflow: hidden来将父元素设为基准
+    也就是接受flex：1的尝试分配，不让它再进行动态调整
+     */
+    overflow: hidden;
     height: 148px;
     margin-left: 8px;
     padding: 8px;
@@ -326,7 +341,6 @@ body {
     display: block;
     position: relative;
     overflow: hidden;
-    width: 100%;
     height: 84px;
     border-radius: 6px;
 }
@@ -420,6 +434,7 @@ body {
     color: #333;
     font-size: 11px;
     line-height: 1.1;
+    white-space: nowrap;
 }
 
 /* banner区域结束 */
@@ -515,6 +530,7 @@ body {
     bottom: 0;
     z-index: 1;
     width: 100%;
+    min-width: 320px;
     max-width: 540px;
     height: 49px;
     background: #fff;
@@ -535,7 +551,7 @@ body {
     content: '';
     width: 32px;
     height: 32px;
-    background-image: url(https://webresource.c-ctrip.com/NFES/html5/1646303030963/_next/serverStatic/img/tabbar.png);
+    background-image: url(../images/tabbar.png);
     background-repeat: no-repeat;
     background-size: 32px auto;
 }
