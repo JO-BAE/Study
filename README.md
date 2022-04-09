@@ -11,6 +11,6 @@ https://jo-bae.github.io/study/02_H5-flex/index.html
 * flex弹性布局
 
 ### 03_H5-rem 仿苏宁易购移动端静态页面
-https://jo-bae.github.io/study/02_H5-rem/index.html
+https://jo-bae.github.io/study/03_H5-rem/index.html
 * rem弹性布局
 
