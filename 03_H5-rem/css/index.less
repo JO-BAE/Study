@@ -1,7 +1,6 @@
 @import url(common.less);
 
 @baseFont: 50;
-
 body {
     min-width: 320px;
     width: 15rem;
@@ -285,4 +284,13 @@ ul {
             font-weight: 700;
         }
     }
+}
+
+
+@pr : (1rem / @baseFont);
+
+.box {
+    background: red;
+    // width: (200rem / @baseFont);
+    height: 200 * @pr;
 }

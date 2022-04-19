@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>黑马面面</title>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <!-- 顶端标题 -->
+    <header class="header">黑马面面</header>
+
+    <!-- 导航栏 -->
+    <nav class="nav">
+        <a href="#" class="nav_item">
+            <img src="./icons/icon1.png" alt="">
+            <span>HR面试</span>
+        </a>
+        <a href="#" class="nav_item">
+            <img src="./icons/icon2.png" alt="">
+            <span>笔试</span>
+        </a>
+        <a href="#" class="nav_item">
+            <img src="./icons/icon3.png" alt="">
+            <span>技术面试</span>
+        </a>
+        <a href="#" class="nav_item">
+            <img src="./icons/icon4.png" alt="">
+            <span>模拟面试</span>
+        </a>
+        <a href="#" class="nav_item">
+            <img src="./icons/icon5.png" alt="">
+            <span>面试技巧</span>
+        </a>
+        <a href="#" class="nav_item">
+            <img src="./icons/icon6.png" alt="">
+            <span>薪资查询</span>
+        </a>
+    </nav>
+
+    <!-- 广告栏 -->
+    <div class="ad">
+        <img src="./images/go.png" alt="">
+    </div>
+
+    <!-- main全文应当只有一个,表示与标题相关的主体内容 -->
+    <main>
+        <!-- 就业指导 -->
+        <section class="section guide">
+            <div class="sec_hd">
+                <h4>
+                    <span class="icon">
+                        <img src="./icons/i2.png" alt="">
+                    </span>
+                    <span>就业指导</span>
+                </h4>
+                <a href="#" class="more">更多>></a>
+            </div>
+            <div class="sec_bd">
+                <!-- Swiper -->
+                <div class="swiper-container guide_swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="./images/1.png" alt="">
+                                <p class="text_1">老师教你应对面试技巧</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="./images/2.jpg" alt="">
+                                <p class="text_1">大家好我系刘德华</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="./images/3.jpg" alt="">
+                                <p class="text_1">我滴家在东北我滴家在东北我滴家在东北我滴家在东北</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <!-- 充电学习 -->
+        <section class="section study">
+            <div class="sec_hd">
+                <h4>
+                    <span class="icon">
+                        <img src="./icons/i1.png" alt="">
+                    </span>
+                    <span>充电学习</span>
+                </h4>
+                <a href="#" class="more">更多>></a>
+            </div>
+            <div class="sec_bd">
+                <!-- Swiper -->
+                <div class="swiper-container study_swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="./images/pic1.png" alt="">
+                                <h5 class="text_2">说地道英语,告别中式英语</h5>
+                                <p><span>156</span>人学习</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="./images/pic2.png" alt="">
+                                <h5 class="text_2">说地道英语,告别中式英语</h5>
+                                <p><span>125</span>人学习</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="./images/pic1.png" alt="">
+                                <h5 class="text_2">说地道英语,告别中式英语</h5>
+                                <p><span>86</span>人学习</p>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="./images/pic2.png" alt="">
+                                <h5 class="text_2">说地道英语,告别中式英语说地道英语,告别中式英语说地道英语,告别中式英语说地道英语,告别中式英语</h5>
+                                <p><span>16</span>人学习</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 底部tab -->
+    <div class="tab">
+        <a href="#" class="tab_item">
+            <img src="./icons/home.png" alt="">
+            <span>首页</span>
+        </a>
+        <a href="#" class="tab_item">
+            <img src="./icons/net.png" alt="">
+            <span>技术面试</span>
+        </a>
+        <a href="#" class="tab_item">
+            <img src="./icons/ms.png" alt="">
+            <span>模拟面试</span>
+        </a>
+        <a href="#" class="tab_item">
+            <img src="./icons/user.png" alt="">
+            <span>我的主页</span>
+        </a>
+    </div>
+
+    <script src="./js/flexible.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        (function () {
+            var swiper = new Swiper('.guide_swiper', {
+                // 会根据container盒子大小和显示个数自动调整盒子宽度
+                // 所以css不需要额外设置silde盒子的宽度
+                // 同时设置显示个数和盒子宽度时,会自动进行缩放调整
+                slidesPerView: 2,
+                centeredSlides: true,
+                loop: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        })();
+        (function () {
+            var swiper = new Swiper(".study_swiper", {
+                slidesPerView: 2.3,
+                spaceBetween: 20,
+            });
+        })();
+    </script>
+</body>
+
+</html>

@@ -275,3 +275,7 @@ ul {
   color: #000;
   font-weight: 700;
 }
+.box {
+  background: red;
+  height: 4rem;
+}
