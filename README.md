@@ -1,7 +1,7 @@
 # study
 
 ### 01_shopping 静态页面
-https://jo-bae.github.io/study/01_shopping
+https://jo-bae.github.io/study/01_shopping  
 https://jo-bae.github.io/study/01_shopping/list.html  
 https://jo-bae.github.io/study/01_shopping/register.html
 * float浮动布局
@@ -16,6 +16,7 @@ https://jo-bae.github.io/study/03_H5-rem
 
 ### 04_heimamm 移动端静态页面
 https://jo-bae.github.io/study/04_heimamm
+* 混合布局
 * 引入flexible.js做适配
 * 借用swiper实现轮播图
 
