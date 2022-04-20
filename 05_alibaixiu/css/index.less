@@ -1,0 +1,251 @@
+@media screen and (min-width: 1280px) {
+    .container {
+        width: 1280px;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+.text_2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.container {
+    padding: 0;
+    background: #fff;
+
+    a {
+        display: block;
+        color: #666;
+        text-decoration: none;
+
+        &:hover {
+            color: #333;
+        }
+    }
+
+    @media screen and (min-width: 992px) {
+        header {
+            padding-left: 0;
+        }
+    }
+}
+
+
+header {
+
+    .logo {
+
+        padding-left: 0;
+        background: #429ad9;
+
+        h1 {
+            margin: 0;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        span {
+            height: 50px;
+            color: #fff;
+            font-size: 18px;
+            line-height: 50px;
+            text-align: center;
+        }
+    }
+
+    .nav {
+        background: #eee;
+        // border-bottom: 1px solid #ccc;
+        // 最后一行选中时和别的块融合到一起了，加点阴影做分割
+        box-shadow: 0 2px 3px -3px rgba(0, 0, 0, .5);
+
+        @media screen and (max-width: 991px) {
+            li {
+                float: left;
+                width: 20%;
+            }
+        }
+
+        a {
+            height: 50px;
+            padding-left: 30px;
+            font-size: 16px;
+            line-height: 50px;
+
+            &::before {
+                position: relative;
+                top: 2px;
+                margin-right: 5px;
+            }
+
+            &:hover {
+                background: #fff;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            a {
+                font-size: 14px;
+                padding-left: 5px;
+            }
+        }
+    }
+}
+
+main {
+
+    .images {
+
+        [class^=col-] {
+            padding: 0;
+        }
+
+        // 这里懒得额外取名
+        // 如果加了需求，里面需要继续加ul-li结构且套用bootstrap相同类名的话可能会出bug
+        // 不过应该不会有这个后续需求吧
+        li.col-md-6 {
+            height: 276px;
+            padding-bottom: 10px;
+
+            span {
+                padding: 0 10px;
+                font-size: 20px;
+                line-height: 41px;
+            }
+        }
+
+        li.col-md-3 {
+            height: 138px;
+            // 调整了样式，原图右边没对齐看着难受
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+
+        @media screen and (max-width: 767px) {
+            li {
+                &:nth-of-type(2n) {
+                    padding-left: 0;
+                }
+            }
+        }
+
+        a {
+            position: relative;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        span {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 41px;
+            padding: 5px 10px;
+            background: rgba(0, 0, 0, .5);
+            color: #fff;
+            font-size: 12px;
+        }
+    }
+
+    .articles {
+        .row {
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+
+            &:first-child {
+                border-top: 1px solid #ccc;
+            }
+        }
+
+        h3 {
+            a {
+                color: #333;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            h3 {
+                font-size: 14px;
+            }
+        }
+
+        .info {
+            color: #777;
+        }
+
+        .user {
+            margin-right: 5px;
+        }
+
+        .date {
+            margin-left: 5px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .tag {
+            margin-bottom: 10px;
+            color: #777;
+        }
+
+        img {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    main {
+        margin-top: 10px;
+    }
+}
+
+footer {
+
+    .banner {
+        img {
+            width: 100%;
+        }
+    }
+
+    .hot {
+        margin-top: 20px;
+        padding: 0 20px 21px;
+        border: 1px solid #ccc;
+
+        h3 {
+            // 去除默认margin的同时设置margin-bottom
+            margin: 0 0 20px;
+            border-radius: 0;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+}
