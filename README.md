@@ -14,3 +14,7 @@ https://jo-bae.github.io/study/02_H5-flex/index.html
 https://jo-bae.github.io/study/03_H5-rem/index.html
 * rem弹性布局
 
+### 04_heimamm 移动端静态页面
+https://jo-bae.github.io/study/04_heimamm/index.html
+* 引入flexible.js做适配
+* 借用swiper实现轮播图
