@@ -1,15 +1,10 @@
-@media screen and (min-width: 1280px) {
-  .container {
-    width: 1280px;
-  }
+body {
+  background: #f5f5f5;
 }
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-body {
-  background: #f5f5f5;
 }
 .text_2 {
   display: -webkit-box;
@@ -22,6 +17,11 @@ body {
   padding: 0;
   background: #fff;
 }
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1280px;
+  }
+}
 .container a {
   display: block;
   color: #666;
@@ -31,8 +31,8 @@ body {
   color: #333;
 }
 @media screen and (min-width: 992px) {
-  .container header {
-    padding-left: 0;
+  header {
+    padding-left: 0 !important;
   }
 }
 header .logo {
@@ -66,45 +66,52 @@ header .nav {
 }
 header .nav a {
   height: 50px;
-  padding-left: 30px;
-  font-size: 16px;
-  line-height: 50px;
+  padding-left: 5px;
+  font-size: 14px;
+  line-height: 56px;
 }
-header .nav a::before {
-  position: relative;
-  top: 2px;
-  margin-right: 5px;
+@media screen and (min-width: 768px) {
+  header .nav a {
+    padding-left: 30px;
+    font-size: 16px;
+  }
 }
 header .nav a:hover {
   background: #fff;
 }
-@media screen and (max-width: 767px) {
-  header .nav a {
-    font-size: 14px;
-    padding-left: 5px;
+header .nav a .glyphicon::before {
+  position: relative;
+  top: 1px;
+}
+main {
+  margin-top: 10px;
+}
+@media screen and (min-width: 992px) {
+  main {
+    margin-top: 0;
   }
 }
-main .images [class^=col-] {
-  padding: 0;
+main .images li {
+  padding: 0 0 10px;
 }
-main .images li.col-md-6 {
+@media screen and (min-width: 768px) {
+  main .images li:nth-of-type(2n) {
+    padding-left: 10px;
+  }
+}
+main .images li:nth-child(2n+3) {
+  padding-left: 10px;
+}
+main .images li.col-sm-6 {
   height: 276px;
-  padding-bottom: 10px;
 }
-main .images li.col-md-6 span {
+main .images li.col-sm-6 span {
   padding: 0 10px;
   font-size: 20px;
   line-height: 41px;
 }
-main .images li.col-md-3 {
+main .images li.col-sm-3 {
   height: 138px;
-  padding-left: 10px;
-  padding-bottom: 10px;
-}
-@media screen and (max-width: 767px) {
-  main .images li:nth-of-type(2n) {
-    padding-left: 0;
-  }
 }
 main .images a {
   position: relative;
@@ -131,16 +138,13 @@ main .articles .row {
 main .articles .row:first-child {
   border-top: 1px solid #ccc;
 }
-main .articles h3 a {
-  color: #333;
-}
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
   main .articles h3 {
     font-size: 14px;
   }
 }
-main .articles .info {
-  color: #777;
+main .articles h3 a {
+  color: #333;
 }
 main .articles .user {
   margin-right: 5px;
@@ -151,18 +155,12 @@ main .articles .date {
 main .articles p {
   margin: 10px 0;
 }
-main .articles .tag {
+main .articles .read {
   margin-bottom: 10px;
-  color: #777;
 }
 main .articles img {
   width: 100%;
   margin-top: 10px;
-}
-@media screen and (max-width: 991px) {
-  main {
-    margin-top: 10px;
-  }
 }
 footer .banner img {
   width: 100%;
@@ -172,8 +170,8 @@ footer .hot {
   padding: 0 20px 21px;
   border: 1px solid #ccc;
 }
-footer .hot h3 {
-  margin: 0 0 20px;
+footer .hot span {
+  margin-bottom: 20px;
   border-radius: 0;
 }
 footer .hot p {

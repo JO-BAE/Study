@@ -1,17 +1,20 @@
-@media screen and (min-width: 1280px) {
-    .container {
-        width: 1280px;
-    }
+@screen-xs-max: 767px;
+@screen-sm-min: 768px;
+@screen-sm-max: 991px;
+@screen-md-min: 992px;
+@screen-md-max: 1119px;
+@screen-lg-min: 1200px;
+@screen-ui: 1280px;
+
+// 初始化样式和通用样式
+body {
+    background: #f5f5f5;
 }
 
 ul {
     margin: 0;
     padding: 0;
     list-style: none;
-}
-
-body {
-    background: #f5f5f5;
 }
 
 .text_2 {
@@ -26,6 +29,12 @@ body {
     padding: 0;
     background: #fff;
 
+    @media screen and (min-width: @screen-ui) {
+        & {
+            width: @screen-ui;
+        }
+    }
+
     a {
         display: block;
         color: #666;
@@ -35,19 +44,19 @@ body {
             color: #333;
         }
     }
-
-    @media screen and (min-width: 992px) {
-        header {
-            padding-left: 0;
-        }
-    }
 }
 
 
+// 头部/左侧导航栏
 header {
+    @media screen and (min-width: @screen-md-min) {
+        & {
+            padding-left: 0 !important;
+        }
+    }
 
+    // logo部分
     .logo {
-
         padding-left: 0;
         background: #429ad9;
 
@@ -62,6 +71,7 @@ header {
         }
 
         span {
+            // bootstrap已经对.visible-xs设置了display: block;
             height: 50px;
             color: #fff;
             font-size: 18px;
@@ -70,79 +80,87 @@ header {
         }
     }
 
+    // nav部分
     .nav {
         background: #eee;
-        // border-bottom: 1px solid #ccc;
         // 最后一行选中时和别的块融合到一起了，加点阴影做分割
         box-shadow: 0 2px 3px -3px rgba(0, 0, 0, .5);
 
-        @media screen and (max-width: 991px) {
-            li {
-                float: left;
-                width: 20%;
+        li {
+            @media screen and (max-width: @screen-sm-max) {
+                & {
+                    float: left;
+                    width: 20%;
+                }
             }
         }
 
         a {
             height: 50px;
-            padding-left: 30px;
-            font-size: 16px;
-            line-height: 50px;
+            padding-left: 5px;
+            font-size: 14px;
+            // line-height: 50px;
+            // 按设计图调整
+            line-height: 56px;
 
-            &::before {
-                position: relative;
-                top: 2px;
-                margin-right: 5px;
+            @media screen and (min-width: @screen-sm-min) {
+                & {
+                    padding-left: 30px;
+                    font-size: 16px;
+                }
             }
 
             &:hover {
                 background: #fff;
             }
-        }
 
-        @media screen and (max-width: 767px) {
-            a {
-                font-size: 14px;
-                padding-left: 5px;
+            .glyphicon::before {
+                position: relative;
+                top: 1px;
             }
         }
     }
 }
 
+// 主体内容
 main {
+    margin-top: 10px;
 
+    @media screen and (min-width: @screen-md-min) {
+        & {
+            margin-top: 0;
+        }
+    }
+
+    // 图片区
     .images {
+        li {
+            // 设置padding-bottom的同时，清除bootstrap自带的padding
+            padding: 0 0 10px;
 
-        [class^=col-] {
-            padding: 0;
-        }
-
-        // 这里懒得额外取名
-        // 如果加了需求，里面需要继续加ul-li结构且套用bootstrap相同类名的话可能会出bug
-        // 不过应该不会有这个后续需求吧
-        li.col-md-6 {
-            height: 276px;
-            padding-bottom: 10px;
-
-            span {
-                padding: 0 10px;
-                font-size: 20px;
-                line-height: 41px;
-            }
-        }
-
-        li.col-md-3 {
-            height: 138px;
-            // 调整了样式，原图右边没对齐看着难受
-            padding-left: 10px;
-            padding-bottom: 10px;
-        }
-
-        @media screen and (max-width: 767px) {
-            li {
+            @media screen and (min-width: @screen-sm-min) {
                 &:nth-of-type(2n) {
-                    padding-left: 0;
+                    padding-left: 10px;
                 }
+            }
+
+            &:nth-child(2n+3) {
+                padding-left: 10px;
+            }
+
+            &.col-sm-6 {
+                height: 276px;
+
+                // 利用权重，层叠第一个li-span的部分样式
+                span {
+                    padding: 0 10px;
+                    font-size: 20px;
+                    line-height: 41px;
+                }
+            }
+
+            &.col-sm-3 {
+                height: 138px;
             }
         }
 
@@ -168,6 +186,7 @@ main {
         }
     }
 
+    // 文章区
     .articles {
         .row {
             padding: 10px 0;
@@ -179,19 +198,15 @@ main {
         }
 
         h3 {
+            @media screen and (max-width: @screen-sm-max) {
+                & {
+                    font-size: 14px;
+                }
+            }
+
             a {
                 color: #333;
             }
-        }
-
-        @media screen and (max-width: 767px) {
-            h3 {
-                font-size: 14px;
-            }
-        }
-
-        .info {
-            color: #777;
         }
 
         .user {
@@ -206,9 +221,8 @@ main {
             margin: 10px 0;
         }
 
-        .tag {
+        .read {
             margin-bottom: 10px;
-            color: #777;
         }
 
         img {
@@ -219,14 +233,9 @@ main {
 
 }
 
-@media screen and (max-width: 991px) {
-    main {
-        margin-top: 10px;
-    }
-}
 
+// 底部/右侧信息栏
 footer {
-
     .banner {
         img {
             width: 100%;
@@ -238,9 +247,8 @@ footer {
         padding: 0 20px 21px;
         border: 1px solid #ccc;
 
-        h3 {
-            // 去除默认margin的同时设置margin-bottom
-            margin: 0 0 20px;
+        span {
+            margin-bottom: 20px;
             border-radius: 0;
         }
 
