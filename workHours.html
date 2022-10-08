@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span[class$=Time] {
+            padding-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="inputTime" id="inputTime" class="inputTime" autofocus="autofocus">
+    <div>
+        上班时间：<span id="startTime" class="startTime"></span>
+        下班时间：<span id="endTime" class="endTime"></span>
+        工作时长：<span id="workTime" class="workTime"></span>
+        加钟补钟：<span id="moreTime" class="moreTime"></span>
+    </div>
+</body>
+<script>
+    var inputTime = document.getElementById("inputTime");
+    var startTime = document.getElementById("startTime");
+    var endTime = document.getElementById("endTime");
+    var workTime = document.getElementById("workTime");
+    var normalTime = "08:30";
+    var moreTime = document.getElementById("moreTime");
+
+    document.onkeyup = function (e) {
+        if (moreTime.innerText) {
+            again();
+        }
+        // 检查按下enter，完成输入
+        if (e.keyCode === 13) {
+            var input = inputTime.value;
+            var arr = input.split('.');
+            if (arr.length < 2) arr.push(0);
+            for (var i in arr) {
+                arr[i] = toFix2(arr[i]);
+            }
+
+            if (startTime.innerText === "") {
+                startTime.innerText = arr.join(":");
+            } else {
+                endTime.innerText = arr.join(":");
+                var start = toMins(startTime.innerText);
+                var end = toMins(endTime.innerText);
+                if (end < start) end = end + 24 * 60;
+                workTime.innerText = toTime(end - start);
+
+                var normal = toMins(normalTime);
+                var work = toMins(workTime.innerText);
+                moreTime.innerText = toTime(work - normal);
+            }
+            inputTime.value = "";
+        }
+    }
+
+    function toFix2(num) {
+        num = parseInt(num);
+        return num < 10 ? "0" + num : num;
+    }
+    function toMins(time) {
+        var arr = time.split(":");
+        var mins = arr[0] * 60 + Number(arr[1]);
+        return mins;
+    }
+    function toTime(mins) {
+        // console.log(mins)
+        var h = parseInt(mins / 60);
+        var m = mins % 60;
+        var time;
+        time = Math.abs(h) + ":" + toFix2(Math.abs(m));
+        if (h < 0 || m < 0) {
+            time = "-" + time;
+        }
+        return time;
+    }
+    function again() {
+        startTime.innerText = "";
+        endTime.innerText = "";
+        workTime.innerText = "";
+        moreTime.innerText = "";
+    }
+</script>
+
+</html>
