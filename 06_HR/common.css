@@ -1,0 +1,22 @@
+:root {
+    --littleFont: 14px;
+    --littleMargin: 10px;
+    --middleMargin: 20px;
+    --littlePadding: 5px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.littleFont {
+    font-size: var(--littleFont);
+}
