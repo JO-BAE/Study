@@ -13,6 +13,16 @@
 }
 
 .clockList {
-    display: none;
+    /* display: none; */
+    margin-top: var(--littlePadding);
+    padding: var(--littlePadding);
     background: rgba(0, 0, 0, .1);
+}
+
+.clockList li{
+    margin: var(--littlePadding) 0;
+}
+
+.clockDate {
+    margin-right: var(--middleMargin);
 }
