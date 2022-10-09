@@ -1,0 +1,10 @@
+#My configurations:
+password.txt
+__
+
+
+#所有.class文件：
+*.class
+
+#不含App.class：
+!App.class

@@ -1,0 +1,259 @@
+@screen-xs-max: 767px;
+@screen-sm-min: 768px;
+@screen-sm-max: 991px;
+@screen-md-min: 992px;
+@screen-md-max: 1119px;
+@screen-lg-min: 1200px;
+@screen-ui: 1280px;
+
+// 初始化样式和通用样式
+body {
+    background: #f5f5f5;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.text_2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.container {
+    padding: 0;
+    background: #fff;
+
+    @media screen and (min-width: @screen-ui) {
+        & {
+            width: @screen-ui;
+        }
+    }
+
+    a {
+        display: block;
+        color: #666;
+        text-decoration: none;
+
+        &:hover {
+            color: #333;
+        }
+    }
+}
+
+
+// 头部/左侧导航栏
+header {
+    @media screen and (min-width: @screen-md-min) {
+        & {
+            padding-left: 0 !important;
+        }
+    }
+
+    // logo部分
+    .logo {
+        padding-left: 0;
+        background: #429ad9;
+
+        h1 {
+            margin: 0;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        span {
+            // bootstrap已经对.visible-xs设置了display: block;
+            height: 50px;
+            color: #fff;
+            font-size: 18px;
+            line-height: 50px;
+            text-align: center;
+        }
+    }
+
+    // nav部分
+    .nav {
+        background: #eee;
+        // 最后一行选中时和别的块融合到一起了，加点阴影做分割
+        box-shadow: 0 2px 3px -3px rgba(0, 0, 0, .5);
+
+        li {
+            @media screen and (max-width: @screen-sm-max) {
+                & {
+                    float: left;
+                    width: 20%;
+                }
+            }
+        }
+
+        a {
+            height: 50px;
+            padding-left: 5px;
+            font-size: 14px;
+            // line-height: 50px;
+            // 按设计图调整
+            line-height: 56px;
+
+            @media screen and (min-width: @screen-sm-min) {
+                & {
+                    padding-left: 30px;
+                    font-size: 16px;
+                }
+            }
+
+            &:hover {
+                background: #fff;
+            }
+
+            .glyphicon::before {
+                position: relative;
+                top: 1px;
+            }
+        }
+    }
+}
+
+// 主体内容
+main {
+    margin-top: 10px;
+
+    @media screen and (min-width: @screen-md-min) {
+        & {
+            margin-top: 0;
+        }
+    }
+
+    // 图片区
+    .images {
+        li {
+            // 设置padding-bottom的同时，清除bootstrap自带的padding
+            padding: 0 0 10px;
+
+            @media screen and (min-width: @screen-sm-min) {
+                &:nth-of-type(2n) {
+                    padding-left: 10px;
+                }
+            }
+
+            &:nth-child(2n+3) {
+                padding-left: 10px;
+            }
+
+            &.col-sm-6 {
+                height: 276px;
+
+                // 利用权重，层叠第一个li-span的部分样式
+                span {
+                    padding: 0 10px;
+                    font-size: 20px;
+                    line-height: 41px;
+                }
+            }
+
+            &.col-sm-3 {
+                height: 138px;
+            }
+        }
+
+        a {
+            position: relative;
+            height: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        span {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 41px;
+            padding: 5px 10px;
+            background: rgba(0, 0, 0, .5);
+            color: #fff;
+            font-size: 12px;
+        }
+    }
+
+    // 文章区
+    .articles {
+        .row {
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+
+            &:first-child {
+                border-top: 1px solid #ccc;
+            }
+        }
+
+        h3 {
+            @media screen and (max-width: @screen-sm-max) {
+                & {
+                    font-size: 14px;
+                }
+            }
+
+            a {
+                color: #333;
+            }
+        }
+
+        .user {
+            margin-right: 5px;
+        }
+
+        .date {
+            margin-left: 5px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        .read {
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+
+}
+
+
+// 底部/右侧信息栏
+footer {
+    .banner {
+        img {
+            width: 100%;
+        }
+    }
+
+    .hot {
+        margin-top: 20px;
+        padding: 0 20px 21px;
+        border: 1px solid #ccc;
+
+        span {
+            margin-bottom: 20px;
+            border-radius: 0;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+}

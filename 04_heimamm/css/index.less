@@ -1,0 +1,285 @@
+@import url(./normalize.css);
+
+body {
+    min-width: 320px;
+    max-width: 750px;
+    // height: 1500px;
+    margin: 0 auto;
+    background: #F2F4F7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+// 文字单行显示，多余省略
+.text_1 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// 文字两行显示，多余省略
+.text_2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+@media screen and (min-width: 750px) {
+    html {
+        font-size: 37.5px !important;
+    }
+}
+
+// 顶端标题
+.header {
+    height: 2.1333rem;
+    border-bottom: 1px solid #EAEAEA;
+    background: #fff;
+    font-size: .9333rem;
+    line-height: 2.1333rem;
+    text-align: center;
+}
+
+// 导航栏
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+
+    .nav_item {
+        flex: 33.33%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.2rem 0 .6667rem 0;
+
+        img {
+            width: 3.7067rem;
+            height: 3.7067rem;
+        }
+
+        span {
+            margin-top: .4267rem;
+            color: #707070;
+            font-size: .6667rem;
+        }
+    }
+}
+
+// 广告栏
+.ad {
+    padding: .9333rem .2667rem 1.1467rem;
+    background: #fff;
+}
+
+
+// 复用样式
+.section {
+    margin-top: .2667rem;
+    padding: 1.0667rem .64rem;
+    background: #fff;
+
+    .sec_hd {
+        display: flex;
+        justify-content: space-between;
+        height: 1.0133rem;
+        line-height: 1.0133rem;
+
+        h4 {
+            margin: 0;
+            color: #333;
+            font-size: .7467rem;
+
+            img {
+                display: inline-block;
+                width: 1.0133rem;
+                height: 1.0133rem;
+                margin-right: .48rem;
+                vertical-align: top;
+            }
+        }
+
+        .more {
+            color: #999;
+            font-size: .5867rem;
+        }
+    }
+
+}
+
+// 就业指导
+.guide {
+
+    .sec_bd {
+        position: relative;
+        margin-top: .9067rem;
+        // 给翻页箭头留出位置
+        padding: 0 1.8667rem;
+    }
+
+    .swiper-container {
+        // 留出放大的空间
+        // 原demo是非当前项目缩小,但是缩小后会留出空白区域
+        // 所以调成了当前项目放大
+        padding: .9333rem 0 2.4533rem;
+    }
+
+    .swiper-slide {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+        transition: 300ms;
+        opacity: .3;
+        // 要和img要同时设置border-radius
+        // 不能单独设border-radius后overflow: hidden，会裁掉p
+        // 也不能只为img设border-radius,会留下方形边角
+        border-radius: .16rem;
+
+        a {
+            display: block;
+            position: relative;
+            height: 8.8rem;
+
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: .16rem;
+            }
+
+            p {
+                display: none;
+                position: absolute;
+                bottom: -1.3067rem;
+                width: 100%;
+                padding: 0 .2667rem;
+                color: #333;
+                font-size: .6667rem;
+                text-align: center;
+            }
+        }
+    }
+
+    .swiper-slide-active,
+    .swiper-slide-duplicate-active {
+        transform: scale(1.2);
+        opacity: 1;
+        z-index: 1;
+
+        a {
+            p {
+                // 放出隐藏的p
+                display: block;
+            }
+        }
+    }
+
+    // 调整swiper-button
+    [class^=swiper-button] {
+        outline: none;
+
+        &::after {
+            // 去掉p的高度,仅相对图片垂直居中
+            position: relative;
+            top: -0.8rem;
+            color: #000;
+        }
+    }
+}
+
+// 充电学习
+.study {
+    .sec_bd {
+        margin-top: .8rem;
+        // 把阴影往左边挪挪,让正式内容对齐边界
+        margin-left: -0.1333rem;
+    }
+
+    .swiper-container {
+        // 留出阴影的位置
+        padding: .08rem .1333rem .2667rem;
+    }
+
+    .swiper-slide {
+        padding: .2667rem;
+        border-radius: .16rem;
+        box-shadow:
+            0 0 .0533rem rgba(153, 153, 153, 0.1),
+            .1067rem 0 .1067rem rgba(153, 153, 153, 0.1),
+            0 .1067rem .24rem 0 rgba(153, 153, 153, 0.2),
+            -0.1067rem 0 .1067rem rgba(153, 153, 153, 0.1);
+
+        a {
+            display: block;
+
+            img {
+                border-radius: .16rem;
+            }
+
+            h5 {
+                // 设置margin-top的同时清除默认margin
+                margin: .5333rem 0 0;
+                padding: 0 .2667rem;
+                font-size: .7467rem;
+                font-weight: normal;
+                line-height: 1.3;
+                letter-spacing: .0533rem;
+            }
+
+            p {
+                padding: .5867rem .4rem;
+                color: #666;
+                font-size: .6933rem;
+
+                span {
+                    color: #FF4400;
+                }
+            }
+        }
+    }
+}
+
+// 防止底部内容被tab遮挡
+main {
+    padding-bottom: 3.0133rem;
+}
+
+// 底部tabber
+.tab {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    min-width: 320px;
+    max-width: 750px;
+    height: 3.0133rem;
+    border-top: 1px solid #E2E2E2;
+    background: #fff;
+
+    .tab_item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: .5867rem;
+
+        &:first-child {
+            color: #52C4F0;
+        }
+
+        img {
+            width: 1.04rem;
+            height: 1.0933rem;
+        }
+
+        span {
+            margin-top: .2933rem;
+        }
+    }
+}
