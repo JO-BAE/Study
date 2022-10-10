@@ -1,3 +1,7 @@
+.hide {
+    display: none;
+}
+
 .staffItem {
     margin-bottom: var(--middleMargin);
     padding: var(--littlePadding);
@@ -12,6 +16,11 @@
     margin-right: 40px;
 }
 
+.moreBtn {
+    color:rgb(81, 181, 240);
+    vertical-align: top;
+}
+
 .clockList {
     /* display: none; */
     margin-top: var(--littlePadding);
@@ -19,7 +28,7 @@
     background: rgba(0, 0, 0, .1);
 }
 
-.clockList li{
+.clockList li {
     margin: var(--littlePadding) 0;
 }
 

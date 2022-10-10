@@ -1,6 +1,11 @@
 window.onload = function () {
-    let importTime = document.getElementById("importTime");
-    importTime.onchange = function () {
+    let s = "1111"
+    console.log(s)
+    s = s.replace('1', '2')
+    console.log(s)
+    // 处理上传的考勤表
+    let attendSheet = document.getElementById("attendSheet");
+    attendSheet.onchange = function () {
         // 创建 FileReader 示例
         let showPreview = new FileReader();
         // 读取文件
@@ -24,6 +29,32 @@ window.onload = function () {
             }
         }
     }
+
+    // 展开/收起功能
+    let moreBtns = document.getElementsByClassName("moreBtn");
+    for (let i of moreBtns) {
+        i.onclick = function () {
+            // 根据点击操作moreBtn类名
+            if (this.className.includes('foldBtn')) {
+                this.className = this.className.replace(' foldBtn', '');
+            } else {
+                this.className += ' foldBtn';
+            }
+
+            // 根据类名处理展开/收起
+            if(this.className.includes('foldBtn')){
+                this.innerText = "收起";
+
+            }
+        }
+    }
+}
+
+function addEle(parent, element, content, className) {
+    var ele = document.createElement(element);
+    ele.innerText = content;
+    ele.className = className;
+    parent.appenChild(ele);
 }
 
 function getData(file) {
