@@ -1,8 +1,8 @@
 :root {
-    --littleFont: 14px;
-    --littleMargin: 10px;
-    --middleMargin: 20px;
-    --littlePadding: 5px;
+    --font1: 10px;
+    --gap1: 5px;
+    --gap2: 10px;
+    --gap3: 30px;
 }
 
 ul {
@@ -18,5 +18,5 @@ a {
 }
 
 .littleFont {
-    font-size: var(--littleFont);
+    font-size: var(--font1);
 }

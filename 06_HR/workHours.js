@@ -1,76 +1,73 @@
 window.onload = function () {
-    let s = "1111"
-    console.log(s)
-    s = s.replace('1', '2')
-    console.log(s)
     // 处理上传的考勤表
     let attendSheet = document.getElementById("attendSheet");
     attendSheet.onchange = function () {
+        let staffList = document.getElementsByClassName("staffList")[0];
         // 创建 FileReader 示例
-        let showPreview = new FileReader();
+        let reader = new FileReader();
         // 读取文件
-        showPreview.readAsBinaryString(this.files[0]);
+        reader.readAsBinaryString(this.files[0]);
         // 文件读取成功时的回调函数
-        showPreview.onload = function (e) {
-            let data = getData(e.target.result);
-            console.log(data)
-            for (let i of data) {
-                for (let j in i) {
-                    if (j === "姓名") {
-                        // console.log(i[j]);
-                    }
-                    if (/[0-9]+/.test(j)) {
-                        let arr = i[j].split("\n");
-                        newArr = uniqeArr(arr);
-                        i[j] = newArr.join("\n");
-                    }
+        reader.onload = function (e) {
+            // 以二进制流方式读取到整份的excel 表格对象
+            let file = e.target.result;
+            let workbook = XLSX.read(file, { type: "binary" });
+            for (let i in workbook.Sheets) {
+                // { defval: "" } 可选参数，保留空值
+                let sheet = XLSX.utils.sheet_to_json(workbook.Sheets[i], { defval: "休" });
+                // console.log(sheet)
+                // 如果导入的表格数据不为空
+                let sf = document.getElementsByClassName("sf")[0];
+                if (sheet) {
+                    sf.style.display = "none";
                 }
-                // break;
-            }
-        }
-    }
+                for (let data of sheet) {
+                    let staffItem = addEle(staffList, "li", "staffItem");
+                    let clockHeader = addEle(staffItem, "ul", "clockHeader");
+                    let clockList = addEle(staffList, "ul", "clockList littleFont hide");
+                    // console.log(data)
+                    for (let key in data) {
+                        if (/^[\u4e00-\u9fa5]{0,}$/.test(key)) {
+                            if (key === "姓名") {
+                                let sName = addEle(clockHeader, "li", "name");
+                                sName.innerText = key + ": " + data[key];
+                            }
+                        } else {
+                            // 打卡时间去重展示，5min以内算重复
+                            let arr = data[key].split("\n");
+                            let uArr = uniqeArr(arr);
+                            for (let i = 0; i < uArr.length - 1; i++) {
+                                let min = toMins(uArr[i + 1]) - toMins(uArr[i]);
+                                if (min < 5) {
+                                    uArr.splice(i + 1, 1);
+                                }
+                            }
+                            // data[key] = uArr.join("\n");
+                            // 展示打卡时间
+                            let clockDate = addEle(clockList, "li", "clockDate");
+                            let date = addEle(clockDate, "span", "date");
+                            date.innerText = key;
+                            if (uArr.length % 2 === 1 && uArr[0] !== "休") {
+                                uArr.push("漏");
+                            }
+                            for (let v of uArr) {
+                                let span = addEle(clockDate, "span", "littleFont");
+                                span.innerText = v;
 
-    // 展开/收起功能
-    let moreBtns = document.getElementsByClassName("moreBtn");
-    for (let i of moreBtns) {
-        i.onclick = function () {
-            // 根据点击操作moreBtn类名
-            if (this.className.includes('foldBtn')) {
-                this.className = this.className.replace(' foldBtn', '');
-            } else {
-                this.className += ' foldBtn';
+                            }
+                        }
+                    }
+                    let addClock = addEle(clockHeader, "li", "addClock");
+                    addClock.innerText = "总加钟: 10:11";
+                    let cutClock = addEle(clockHeader, "li", "cutClock");
+                    cutClock.innerText = "总消钟：10:11";
+                    let totalClock = addEle(clockHeader, "li", "totalClock");
+                    totalClock.innerText = "净加钟/消钟：10:11";
+                    // break;
+                }
             }
 
-            // 根据类名处理展开/收起
-            if(this.className.includes('foldBtn')){
-                this.innerText = "收起";
-
-            }
         }
     }
 }
 
-function addEle(parent, element, content, className) {
-    var ele = document.createElement(element);
-    ele.innerText = content;
-    ele.className = className;
-    parent.appenChild(ele);
-}
-
-function getData(file) {
-    let data = [];
-    // 以二进制流方式读取到整份的excel 表格对象
-    let workbook = XLSX.read(file, {
-        type: 'binary'
-    })
-    // 遍历每张表读取
-    for (let sheet in workbook.Sheets) {
-        // 判断文件是否是 excel 文件
-        if (workbook.Sheets.hasOwnProperty(sheet)) {
-            // 对表格的内容进行处理
-            data = data.concat(XLSX.utils.sheet_to_json(workbook.Sheets[sheet]));
-            break; // 如果只取第一张表，就取消注释这行
-        }
-    }
-    return data;
-}
