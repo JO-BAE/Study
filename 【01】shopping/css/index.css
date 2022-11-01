@@ -1,0 +1,695 @@
+/* main区域开始 */
+.main {
+    height: 455px;
+    margin-top: 10px;
+}
+
+.focus {
+    width: 721px;
+    height: 100%;
+    margin-left: 220px;
+}
+
+.newsflash {
+    width: 249px;
+    height: 100%;
+}
+
+.news {
+    height: 163px;
+    border: 1px solid #e4e4e4;
+}
+
+.news_hd {
+    height: 32px;
+    padding: 0 15px;
+    border-bottom: 1px dotted #e4e4e4;
+    line-height: 32px;
+}
+
+.news_hd h5 {
+    font-size: 14px;
+}
+
+.news_hd a::after {
+    content: '\e609';
+    font-family: 'iconfont';
+    font-size: 8px;
+    margin-left: 8px;
+}
+
+.news_bd {
+    padding: 5px 16px;
+}
+
+.news_bd ul li {
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.news_bd ul li span {
+    margin-right: 5px;
+    font-weight: 700;
+}
+
+.lifeservice {
+    height: 210px;
+}
+
+.lifeservice ul li {
+    float: left;
+}
+
+.lifeservice ul li a {
+    position: relative;
+    display: block;
+    width: 61px;
+    height: 69px;
+    border-right: 1px solid #e8e8e7;
+    border-bottom: 1px solid #e8e8e7;
+    text-align: center;
+}
+
+.lifeservice ul li:nth-child(4n+1) a {
+    border-left: 1px solid #e8e8e7;
+}
+
+.lifeservice ul li a span {
+    /* 直接用p标签也行，但是感觉p一般装大段的文字 */
+    display: block;
+}
+
+.lifeservice ul li a::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 28px;
+    margin-top: 13px;
+    background: url(../images/icons.png) no-repeat -17px -13px;
+}
+
+.lifeservice ul .discount a::after {
+    content: url(../images/discount.png);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.bargain {
+    margin-top: 5px;
+}
+
+.bargain img {
+    width: 100%;
+}
+
+/* main区域结束 */
+
+/* 今日推荐区域开始 */
+.recom {
+    height: 163px;
+    margin-top: 11px;
+    background: #ebebeb;
+}
+
+.recom_hd {
+    width: 208px;
+    height: 100%;
+    background: #5c5251;
+    color: #fff;
+    text-align: center;
+}
+
+.recom_hd::before {
+    display: block;
+    content: '\e667';
+    font-family: 'iconfont';
+    font-size: 66px;
+    margin-top: 30px;
+}
+
+.recom_hd h1 {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.recom_bd ul li {
+    position: relative;
+    float: left;
+    width: 210px;
+    padding: 0 19px;
+}
+
+.recom_bd ul li:not(:last-child)::after {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    content: '';
+    width: 1px;
+    height: 143px;
+    background: #ddd;
+}
+
+.recom_bd ul li .pro_sales {
+    float: left;
+    width: 45%;
+}
+
+.pro_sales h2 {
+    margin-top: 10px;
+    padding: 12px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.pro_sales p {
+    display: inline-block;
+    padding: 2px 4px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.pro_sales span {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 21px;
+    color: #666;
+    font-size: 12px;
+}
+
+.buy_btn {
+    padding: 2px 15px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 14px;
+}
+
+.recom .pro_img {
+    float: left;
+    width: 55%;
+    line-height: 163px;
+}
+
+.recom .pro_img img {
+    height: 133px;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.bg_lightblue {
+    background: #00a0e8;
+}
+
+.bg_green {
+    background: #5fb200;
+}
+
+.bg_red {
+    background: #5fb200;
+}
+
+.bg_blue {
+    background: #0085fb;
+}
+
+/* 今日推荐区域结束 */
+
+/* 猜你喜欢区域开始 */
+.hd {
+    margin-top: 20px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.hd h2 {
+    color: #333;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.hd .fr {
+    margin-right: 21px;
+    color: #666;
+}
+
+.hd .fr::after {
+    content: '\e65e';
+    font-family: "iconfont";
+    font-size: 13px;
+    margin-left: 9px;
+}
+
+.bd {
+    height: 231px;
+    border: 1px solid #ededed;
+}
+
+.bd ul li {
+    float: left;
+    width: 199px;
+}
+
+.like .pro_img {
+    height: 158px;
+    line-height: 158px;
+    text-align: center;
+}
+
+.like .pro_img img {
+    vertical-align: middle;
+}
+
+.bd ul li a span {
+    display: block;
+    padding-left: 35px;
+    border-right: 1px solid #ededed;
+    color: #666;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.bd ul li:last-child a span {
+    border-right: none;
+}
+
+.bd ul li a .price {
+    color: #df3033;
+    font-size: 16px;
+}
+
+.bd ul li a .price::before {
+    position: relative;
+    top: -1px;
+    content: '\ea76';
+    font-family: 'iconfont';
+    font-size: 8px;
+}
+
+/* 猜你喜欢区域结束 */
+
+
+/* 有趣区开始 */
+.list_bd {
+    height: 405px;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+}
+
+.list_bd a {
+    display: block;
+    height: 100%;
+}
+
+.col_402 {
+    height: 405px;
+}
+
+.col_402 a {
+    position: relative;
+    width: 380px;
+    padding-left: 22px;
+    background: #b8bddd;
+    color: #3b468d;
+    font-size: 14px;
+}
+
+.col_402 a h3 {
+    padding-top: 15px;
+    font-size: 18px;
+}
+
+.col_402 a img {
+    position: absolute;
+    left: 125px;
+    top: 113px;
+}
+
+.col_227 {
+    width: 226px;
+    border-right: 1px solid #ededed;
+}
+
+.col_407 {
+    width: 406px;
+    border-right: 1px solid #ededed;
+    background: #f7f7f7;
+}
+
+.col_407 ul li {
+    float: left;
+    width: 50%;
+}
+
+.col_407 ul li:first-child {
+    width: calc(100% - 53px);
+    padding-left: 53px;
+}
+
+.col_407 ul li:last-child::before {
+    float: left;
+    content: '';
+    width: 0;
+    height: 100%;
+    border-right: 1px solid #ededed;
+}
+
+.comm h3 {
+    height: 39px;
+    margin: 0 18px;
+    border-bottom: 1px dashed #ededed;
+    font-size: 14px;
+    line-height: 39px;
+    text-align: center;
+}
+
+.comm ul li {
+    height: 158px;
+}
+
+.comm ul li:first-child {
+    height: 206px;
+    border-bottom: 1px solid #ededed;
+}
+
+.comm ul li a {
+    position: relative;
+    padding-left: 8px;
+}
+
+.comm ul li a h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-top: 50px;
+}
+
+.comm ul li:first-child a h4 {
+    padding-top: 68px;
+}
+
+.comm ul li a img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 140px;
+}
+
+.comm ul li:first-child a img {
+    bottom: 15px;
+    height: 165px;
+}
+
+.funny .brand {
+    margin-left: 10px;
+    width: 154px;
+}
+
+.funny .brand ul li {
+    float: left;
+}
+
+.funny .brand ul li a {
+    display: block;
+    width: 76px;
+    height: 57px;
+    border-right: 1px dotted #e0e0e0;
+    border-bottom: 1px dotted #e0e0e0;
+    line-height: 57px;
+}
+
+.funny .brand ul li:nth-child(2n) a {
+    border-right: 1px solid #ededed;
+}
+
+.funny .brand ul li:nth-child(13) a,
+.funny .brand ul li:last-child a {
+    border-bottom: none;
+}
+
+.funny .brand ul li a img {
+    vertical-align: middle;
+}
+
+/* 有趣区结束 */
+
+/* 楼层区域开始 */
+.floor {
+    margin-bottom: 37px;
+}
+
+.floor .w {
+    margin-top: 20px;
+}
+
+.box_hd {
+    height: 40px;
+    border-bottom: 2px solid #c81623;
+    line-height: 40px;
+}
+
+.box_hd h3 {
+    color: #c81623;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.box_hd .tab_list ul li {
+    position: relative;
+    float: left;
+}
+
+.tab_list ul li:not(:last-child)::after {
+    position: absolute;
+    right: 0;
+    top: 17px;
+    content: '';
+    width: 0;
+    height: 11px;
+    border-right: 1px solid #333;
+}
+
+.tab_list ul li a {
+    padding: 0 15px;
+}
+
+.tab_list ul li .current {
+    color: #c81623;
+}
+
+.box_bd,
+.tab_list_item>div {
+    height: 360px;
+}
+
+.tab_list_item a {
+    display: block;
+    height: 100%;
+}
+
+.col_210 {
+    width: 210px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.col_210 ul {
+    padding-left: 14px;
+    height: 98px;
+}
+
+.col_210 ul li {
+    float: left;
+    width: 86px;
+    height: 32px;
+    margin-right: 12px;
+    border-bottom: 1px solid #ededed;
+    line-height: 32px;
+}
+
+.reco {
+    height: 261px;
+}
+
+.reco h3 {
+    color: #c81623;
+    font-size: 18px;
+    margin-top: 26px;
+}
+
+.reco h5 {
+    color: #c81623;
+    font-size: 12px;
+}
+
+.reco img {
+    margin-top: 22px;
+}
+
+.col_329 {
+    position: relative;
+    width: 329px;
+    height: 100%;
+    background: #c6e8b6;
+    color: #578d38;
+}
+
+.col_329 h3 {
+    margin-top: 40px;
+    margin-left: 32px;
+    font-size: 18px;
+}
+
+.col_329 h5 {
+    margin-left: 32px;
+    font-size: 16px;
+}
+
+.col_329 .pic {
+    position: relative;
+    text-align: center;
+}
+
+.col_329 .pic img {
+    margin-top: 40px;
+    /* 调整镜像和原图的距离 */
+    margin-bottom: -5px;
+}
+
+/* 设置镜像图片 */
+.col_329 .pic::after {
+    display: block;
+    content: '';
+    height: 27px;
+    background: url(../upload/phone2.png) no-repeat bottom center;
+    transform: scaleY(-1);
+    opacity: .5;
+}
+
+/* 为镜像图片添加渐变 */
+.col_329 .pic::before {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: 151px;
+    height: 27px;
+    background: linear-gradient(transparent, #c6e8b6);
+    z-index: 1;
+}
+
+.col_329 ul {
+    position: absolute;
+    left: calc(50% - 23px);
+    bottom: 16px;
+    width: 46px;
+}
+
+.col_329 ul li {
+    float: left;
+}
+
+.col_329 ul li a {
+    width: 10px;
+    height: 10px;
+    margin-left: 8px;
+    background: #3e3e3e;
+    border-radius: 50%;
+}
+
+.col_329 ul li:first-child a {
+    margin-left: 0;
+}
+
+.col_329 ul .current a {
+    background: #fff;
+}
+
+.col_221 {
+    width: 221px;
+}
+
+.col_219 {
+    width: 219px;
+}
+
+.s {
+    position: relative;
+    height: 154px;
+    padding: 25px 0 0 20px;
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+}
+
+.s h3 {
+    font-size: 16px;
+}
+
+.s h5 {
+    color: #e82633;
+    font-size: 14px;
+}
+
+.s img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.b {
+    height: 100%;
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.b h3 {
+    padding-top: 72px;
+    font-size: 18px;
+}
+
+.b h5 {
+    color: #a1a1a1;
+    font-size: 16px;
+}
+
+.b img {
+    margin-top: 44px;
+}
+
+.floor .brand {
+    height: 65px;
+    margin-top: 20px;
+    background: #f7f7f7;
+    line-height: 65px;
+    text-align: center;
+}
+
+.floor .brand a {
+    display: block;
+}
+
+.floor .brand a img {
+    vertical-align: middle;
+}
+
+.floor .brand ul li {
+    position: relative;
+    float: left;
+    width: 120px;
+}
+
+.floor .brand ul li:not(:last-child)::after {
+    position: absolute;
+    right: 0;
+    top: 13px;
+    content: '';
+    width: 0;
+    height: 39px;
+    border-right: 1px dotted #ccc;
+}
+
+/* 楼层区域结束 */

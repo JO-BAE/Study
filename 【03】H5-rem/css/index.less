@@ -1,0 +1,296 @@
+@import url(common.less);
+
+@baseFont: 50;
+body {
+    min-width: 320px;
+    width: 15rem;
+    height: 1500px;
+    margin: 0 auto;
+    background: #f2f2f2;
+    color: #333;
+    font-family: Arial, Helvetica, STHeiTi, sans-serif;
+    font-size: (24rem / @baseFont);
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+// APP提示区域
+.app {
+    height: (90rem / @baseFont);
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// 顶部固定搜索区域
+.search_wrap {
+    background: #FFDB47;
+    // height: (180rem / @baseFont);
+    overflow: hidden;
+
+    .content_wrap_1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: (682rem / @baseFont);
+        height: (88rem / @baseFont);
+        margin: 0 auto;
+
+
+        .class,
+        .login {
+            width: (36rem / @baseFont);
+            height: (60rem / @baseFont);
+        }
+
+        .wrapper {
+            width: (390rem / @baseFont);
+            height: (76rem / @baseFont);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .content_wrap_2 {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // width: 15rem;
+        height: (92rem / @baseFont);
+        padding: 0 (24rem / @baseFont);
+        // 哇这个阴间玩意儿，用line-height和vertical-align让input在88px高度垂直居中
+        // 我用的flex写居中，和原网站有1px的位置偏移，找了半天原因
+        line-height: (88rem / @baseFont);
+
+        .input {
+            position: relative;
+            width: 100%;
+
+            &::before {
+                position: absolute;
+                top: (28rem / @baseFont);
+                left: (20rem / @baseFont);
+                z-index: 1;
+                content: '';
+                width: (36rem / @baseFont);
+                height: (36rem / @baseFont);
+                background: url(../images/search-icon.png) no-repeat;
+                background-size: (36rem / @baseFont) (36rem / @baseFont);
+            }
+
+            input {
+                position: relative;
+                box-sizing: border-box;
+                width: 100%;
+                height: (64rem / @baseFont);
+                padding: (3rem / @baseFont) (20rem / @baseFont) 0 (65rem / @baseFont);
+                border: none;
+                background: #fff;
+                color: #999;
+                font-size: (28rem / @baseFont);
+                line-height: (64rem / @baseFont);
+                vertical-align: middle;
+                border-radius: (30rem / @baseFont);
+            }
+        }
+    }
+
+
+}
+
+.search_wrap_fixed {
+    position: fixed;
+    top: 0;
+    width: 15rem;
+
+    .content_wrap_1 {
+        .wrapper {
+            display: none;
+        }
+    }
+
+    .content_wrap_2 {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: (522rem / @baseFont);
+    }
+}
+
+// banner区域开始
+.banner {
+    position: relative;
+    background: url(../images/banner-bg.png) no-repeat;
+
+    .banner_slider {
+        overflow: hidden;
+        width: (702rem / @baseFont);
+        height: (229rem / @baseFont);
+        margin: 0 auto;
+        border-radius: (24rem / @baseFont);
+
+        li {
+            position: relative;
+            width: (702rem / @baseFont);
+            height: (229rem / @baseFont);
+        }
+
+        img {
+            position: absolute;
+            left: -(24rem / @baseFont);
+            bottom: 0;
+            width: 15rem;
+            height: (368rem / @baseFont);
+        }
+    }
+
+    .banner_trigger {
+        display: flex;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: (12rem / @baseFont);
+
+        li {
+            display: flex;
+            justify-content: center;
+            width: (18rem / @baseFont);
+            height: (8rem / @baseFont);
+            margin: 0 (4rem / @baseFont);
+
+            &::before {
+                content: '';
+                width: (9rem / @baseFont);
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: (8rem / @baseFont);
+            }
+
+        }
+
+        .current {
+            &::before {
+                flex: 1;
+                background: #fff;
+            }
+        }
+    }
+}
+
+// 广告区域
+.ad {
+    a {
+        display: block;
+
+        img {
+            width: 100%;
+        }
+    }
+
+}
+
+// 链接入口区域
+.enter {
+
+    .enter_list {
+        display: flex;
+        flex-wrap: wrap;
+
+        a {
+            flex: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            height: (142rem / @baseFont);
+            color: #666;
+            font-size: (22rem / @baseFont);
+
+            img {
+                width: (84rem / @baseFont);
+                height: (84rem / @baseFont);
+                margin-bottom: (5rem / @baseFont);
+            }
+        }
+    }
+
+    .enter_trigger {
+        height: (12rem / @baseFont);
+        margin-top: (16rem / @baseFont);
+    }
+}
+
+// 秒杀区域开始
+.sk {
+    width: (702rem / @baseFont);
+    height: 300px;
+    margin: 0 auto;
+    // 这里苏宁留了一个24px高的空白div，不知道要做什么
+    margin-top: (24rem / @baseFont);
+    background: #fff;
+
+    .hh {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-size: 1px * @baseFont;
+        text-shadow: 2px 3px 2px rgba(0, 0, 0, 0.3);
+    }
+}
+
+// 底部固定tab栏
+.tab {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 15rem;
+    height: (100rem / @baseFont);
+    border-top: 1px solid #eee;
+    background: #fff;
+
+    a {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #666;
+        font-size: (20rem / @baseFont);
+
+        img {
+            width: (48rem / @baseFont);
+            height: (48rem / @baseFont);
+        }
+
+        &:first-child {
+            color: #000;
+            font-weight: 700;
+        }
+    }
+}
+
+
+@pr : (1rem / @baseFont);
+
+.box {
+    background: red;
+    // width: (200rem / @baseFont);
+    height: 200 * @pr;
+}

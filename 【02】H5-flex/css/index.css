@@ -1,0 +1,575 @@
+/* 初始化设置 */
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    /* 携程没加最小宽度，但是页面缩太小时样式稀碎，觉得还是加上好一点 */
+    min-width: 320px;
+    max-width: 540px;
+    /* height: 1500px; */
+    margin: 0 auto;
+    background: #f4f4f4;
+    font-family: PingFangSC-regular, Tahoma, Lucida Grande, Verdana, Microsoft Yahei, STXihei, hei;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* 顶部固定搜索区域开始 */
+.search {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    padding: 12px 12px 6px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.input {
+    display: flex;
+    height: 32px;
+    border: 1.8px solid #0086f6;
+    color: #999;
+    font-size: 15px;
+    line-height: 21px;
+    border-radius: 25px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.input::before {
+    content: '\e651';
+    margin-left: 12px;
+    margin-right: 6px;
+    color: #666;
+    font-family: 'iconfont';
+    font-size: 20px;
+}
+
+/* 顶部固定搜索区域结束 */
+
+
+.page {
+    padding: 50px 0;
+}
+
+/* nav导航区域开始 */
+.nav_main_wrap {
+    padding: 6px 12px 2px;
+    background: #fff;
+    font-family: PingFangSC-Medium;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+}
+
+.nav_main_1 {
+    display: flex;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.nav_main_1 ul {
+    flex: 1;
+    margin-left: 1px;
+}
+
+.nav_main_1 ul:first-child {
+    margin-left: 0;
+}
+
+.nav_main_1 ul li {
+    margin-top: 1px;
+    color: #333;
+}
+
+.nav_main_1 ul li:first-child {
+    margin-top: 0;
+    color: #fff;
+}
+
+.nav_main_1 ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 58px;
+    white-space: nowrap;
+}
+
+.nav_main_1 ul li a::before {
+    content: '';
+    width: 28px;
+    height: 28px;
+    margin-bottom: 4px;
+    background-image: url(../images/mainnav.png);
+    background-repeat: no-repeat;
+    background-size: 28px;
+}
+
+.nav_hotel li {
+    background: #fff5f1;
+}
+
+.nav_hotel li:first-child {
+    background: linear-gradient(180deg, #fa5956, #fb8650);
+}
+
+.nav_hotel li:nth-child(1) a::before {
+    background-position-y: -84px;
+}
+
+.nav_hotel li:nth-child(2) a::before {
+    background-position-y: -336px;
+}
+
+.nav_hotel li:nth-child(3) a::before {
+    background-position-y: 0;
+}
+
+.nav_flight li {
+    background: #eff9ff;
+}
+
+.nav_flight li:first-child {
+    background: linear-gradient(180deg, #3c83fa, #50b2fa);
+}
+
+.nav_flight li:nth-child(1) a::before {
+    background-position-y: -168px;
+}
+
+.nav_flight li:nth-child(2) a::before {
+    background-position-y: -56px;
+}
+
+.nav_flight li:nth-child(3) a::before {
+    background-position-y: -280px;
+}
+
+.nav_main_2 {
+    display: flex;
+    flex-wrap: wrap;
+    display: none;
+}
+
+.nav_main_2 a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 20%;
+    height: 58px;
+}
+
+.nav_main_2 a::before {
+    content: '';
+    width: 28px;
+    height: 28px;
+    background-image: url(../images/subnav.png);
+    background-repeat: no-repeat;
+    background-size: 28px;
+}
+
+.nav_main_2 a:nth-child(1):before {
+    background-position-y: -84px;
+}
+
+.nav_main_2 a:nth-child(2):before {
+    background-position-y: 0;
+}
+
+.nav_main_2 a:nth-child(3):before {
+    background-position-y: -420px;
+}
+
+.nav_main_2 a:nth-child(4):before {
+    background-position-y: -504px;
+}
+
+.nav_main_2 a:nth-child(5):before {
+    background-position-y: -168px;
+}
+
+.nav_switch {
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    padding-top: 4px;
+    background: linear-gradient(to bottom, #fff, #f4f4f4);
+}
+
+.nav_switch_item {
+    width: 4px;
+    height: 4px;
+    background: #666;
+    border-radius: 2px;
+}
+
+.nav_switch_item:first-child {
+    margin-right: 4px;
+}
+
+.nav_switch_item_active {
+    width: 14px;
+    background: #0086f6;
+}
+
+/* nav导航区域结束 */
+
+/* banner区域开始 */
+.banner_wrap {
+    display: flex;
+    margin: 0 12px;
+}
+
+.banner {
+    flex: 1;
+    /* !!!!
+    这个overflow: hidden;非常重要！
+    因为flex：1只是一个尝试分配，其实还会根据实际内容的宽度做调整
+    而子元素又一层层直接或间接设置了宽度100%，也就是依赖父元素来设宽
+    这样就会陷入“父元素根据子元素调宽，子元素依赖父元素设宽”的“相互推让”局面
+    于是实际样式表现会根据子元素内容的增减一直变来变去
+    所以要确定一个主心骨，明确谁是基准
+    这里利用overflow: hidden来将父元素设为基准
+    也就是接受flex：1的尝试分配，不让它再进行动态调整
+     */
+    overflow: hidden;
+    height: 148px;
+    margin-left: 8px;
+    padding: 8px;
+    background: #fff;
+    font-size: 10px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.banner:first-child {
+    margin-left: 0;
+}
+
+.banner_hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+}
+
+.banner_hd img {
+    height: 100%;
+}
+
+.banner_hd span {
+    padding: 1px 4px;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+.banner:first-child .banner_hd span {
+    background: #ffebe3;
+    color: #ff4607;
+}
+
+.banner:last-child .banner_hd span {
+    background: #fdefd2;
+    color: #ae6e15;
+}
+
+.banner_bd {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 6px;
+}
+
+.banner_bd ul {
+    display: flex;
+}
+
+.banner:first-child .banner_bd ul {
+    /* 动态，li.length * 100% */
+    width: 300%;
+}
+
+.banner_bd li {
+    position: relative;
+    flex: 1;
+}
+
+.banner:last-child .banner_bd li {
+    margin-left: 4px;
+}
+
+.banner:last-child .banner_bd li:first-child {
+    margin-left: 0;
+}
+
+.block_switch {
+    display: flex;
+    position: absolute;
+    top: 6px;
+    right: 2px;
+    z-index: 1;
+}
+
+.block_switch span {
+    width: 4px;
+    height: 4px;
+    margin-right: 4px;
+    background: hsla(0, 0%, 100%, .4);
+    border-radius: 2px;
+}
+
+.block_switch span.active {
+    width: 14px;
+    background: #fff;
+}
+
+.block_image {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 84px;
+    border-radius: 6px;
+}
+
+.block_image img {
+    width: 100%;
+}
+
+.banner:first-child .block_image img {
+    transform: translateY(-32%);
+}
+
+.banner:last-child .block_image img {
+    height: 100%;
+}
+
+.banner_tag {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 3px;
+    line-height: 14px;
+    border-bottom-right-radius: 6px;
+}
+
+.banner:first-child .banner_tag {
+    color: #fff;
+    background: rgba(51, 51, 51, .8);
+}
+
+.banner:last-child .banner_tag {
+    color: #663c00;
+    background: linear-gradient(270deg, #f8e1bd, #e2c089);
+}
+
+.block_image p {
+    display: -webkit-box;
+    position: absolute;
+    bottom: 0;
+    margin: 6px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 12px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipse;
+}
+
+.banner:first-child .block_footer {
+    display: flex;
+    align-items: center;
+    height: 18px;
+    margin-top: 4px;
+    line-height: 18px;
+}
+
+.price_current {
+    color: #f60;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.price_current::before {
+    content: '¥';
+    font-size: 11px;
+    line-height: 1.1;
+}
+
+.price_origin {
+    margin-left: 2px;
+    color: #666;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+
+.price_discount {
+    margin-left: 4px;
+    padding: 0 3px;
+    color: #fff;
+    font-size: 10px;
+    font-family: PingFangSC-Regular;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #fa5956, #fb8650);
+}
+
+.banner:last-child .block_footer {
+    display: flex;
+    margin-top: 6px;
+    color: #333;
+    font-size: 11px;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+/* banner区域结束 */
+
+/* 广告投放区域开始 */
+.ad {
+    overflow: hidden;
+    height: 88px;
+    margin: 0 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+.ad img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 广告投放区域结束 */
+
+/* 底部信息区域开始 */
+.footer {
+    height: 120px;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.button_wrap {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 12px;
+    margin-top: 24px;
+}
+
+.button_wrap a {
+    min-width: 100px;
+    height: 30px;
+    border: 1px solid #999;
+    color: #333;
+    font-size: 13px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.button_reverse::before {
+    content: '\e61b';
+    font-family: 'iconfont';
+    margin-right: 4px;
+}
+
+.button_language::before {
+    content: '\e99b';
+    font-family: 'iconfont';
+    margin-right: 4px;
+}
+
+.button_language::after {
+    content: '\e65c';
+    font-family: 'iconfont';
+}
+
+.tool_wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 13px;
+    color: #666;
+    font-size: 12px;
+}
+
+.tool_wrap a:not(:first-child) {
+    margin-left: 48px;
+}
+
+.footer p {
+    margin-top: 16px;
+    color: #666;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+}
+
+.footer p span {
+    margin-left: 6px;
+}
+
+/* 底部信息区域结束 */
+
+/* 底部固定tab栏开始 */
+.tab {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    height: 49px;
+    background: #fff;
+    box-shadow: 0 -5px 15px 0 rgba(0, 0, 0, .05);
+}
+
+.tab a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    color: #666;
+    font-size: 11px;
+    line-height: 12px;
+}
+
+.tab a::before {
+    content: '';
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/tabbar.png);
+    background-repeat: no-repeat;
+    background-size: 32px auto;
+}
+
+.home::before {
+    background-position-y: 0;
+}
+
+.comunity::before {
+    background-position-y: -32px;
+}
+
+.message::before {
+    background-position-y: -64px;
+}
+
+.mine::before {
+    background-position-y: -96px;
+}
+
+/* 底部固定tab栏结束 */

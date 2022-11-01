@@ -5,6 +5,7 @@ __
 
 #所有.class文件：
 *.class
+*.xlsx
 
 #不含App.class：
 !App.class

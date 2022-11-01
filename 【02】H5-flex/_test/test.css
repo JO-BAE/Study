@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f7f7f7;
+}
+
+.box_wrap {
+    display: flex;
+    width: 620px;
+    height: 350px;
+    margin: auto;
+    background: #fff;
+}
+
+.box {
+    flex: 1;
+    /* overflow: hidden; */
+    height: 250px;
+    margin-left: 10px;
+    background: gray;
+}
+
+.box1 {
+    margin-left: 0;
+}
+
+p {
+    height: 10px;
+    background: pink;
+}
+
+/* 前提：
+1. box_wrap设置display：flex，固定宽度600；
+2. box_wrap下3个box均设置flex：1 ，则box均默认200
+3. box下各有1个p
+*/
+
+/* 情景：p等宽超出200 */
+/* 预测：box仍为200，p溢出 */
+p {
+    width: 300px;
+}
+/* 实际：box全部放大到了300*/
+
+
+
+/* 衍生情景：p不等宽超出200，或有的超有的不超 */
+.box1 p {
+    width: 10px;
+}
+
+.box2 p {
+    width: 200px;
+}
+
+.box3 p {
+    width: 300px;
+}
+/* 现象：p1 100, p2 200, p3 300 */
+
+/* 总结：
+因为情况有很多种，尝试改了各种数据后，个人感觉应该是：
+1.尝试均分宽度W，得到均宽w （w=W/n）
+2.沿主轴方向检查，遇到有人w不够用，那就优先提供给它所需的宽度d
+3.重置可分配宽度W（W=W-d），剔除已经分配宽度的元素(n=n-1)
+3.回到步骤1
+4.回到步骤2 
+*/
+
+
+
+
+
+
